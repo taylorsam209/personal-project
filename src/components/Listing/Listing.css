@@ -1,3 +1,30 @@
 .Listing{
     text-align: center;
 }
+
+.content-container {
+    background-color: red;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    
+}
+
+.left-content-container {
+    height: 100%;
+    width:50%;
+    background-color: cornflowerblue; 
+
+}
+
+.right-content-container {
+    height:100%;
+    width: 50%;
+    background-color: olive;
+}
+
+/* .listing-container {
+    height: 35%;
+    width: 90%;
+    background-color: gray;
+} */

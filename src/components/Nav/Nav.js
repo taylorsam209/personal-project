@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import Landing from "../Landing/Landing"
-import Listing from "../Listing/Listing"
+import { Link } from 'react-router-dom';
 import "./Nav.css";
 
 class Nav extends Component {

@@ -4,7 +4,9 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     massive = require('massive'),
     passport = require('passport'),
-    Auth0Strategy = require('passport-auth0');
+    Auth0Strategy = require('passport-auth0'),
+    axios = require('axios');
+    controller = require('./controller');
 
 const port = 3010;
 const app = express();
@@ -71,10 +73,16 @@ passport.deserializeUser(function (id, done) {
         })
 })
 
-app.get('/api/getlisting/:location', (req, res) => {
-    console.log("Backend is connected")
-    res.status(200).send("It works")
-})
+// app.get('/api/getlisting/:location', (req, res) => {
+//     console.log("Backend is connected")
+//     res.status(200).send("It works")
+// })
+
+app.get('/api/getlisting/:location', controller.readListing) //Search input returns listing of restaurants
+app.get('/api/getRestaurant/:id', controller.readRestaurant) //get single restaurant by yelp-id in database and makes request to yelp
+app.post('/api/addRestaurant', controller.addRestaurant)
+app.get('/api/getfavlisting/:id', controller.readFavListing)
+// app.delete('/api/deletefavrestaurant/:id', controller.deleteFavRestaurant)
 
 
 app.listen(port, () => console.log(`Running on port ${port}`))

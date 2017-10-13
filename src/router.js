@@ -10,7 +10,7 @@ export default (
     <Switch>
         <Route exact path='/' component={Landing} />
         <Route path='/listing' component={Listing} />
-        <Route path='/profile/:id' component={Profile} />
+        <Route path='/profile' component={Profile} />
         <Route path='/restaurant/:id' component={Restaurant} />
     </Switch>
 )
