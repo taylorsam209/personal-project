@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Restaurant.css';
-import { Link } from 'react-router-dom';
 import Nav from '../Nav/Nav';
 import { connect } from 'react-redux';
 

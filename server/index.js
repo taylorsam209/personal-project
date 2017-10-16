@@ -7,10 +7,12 @@ const express = require('express'),
     Auth0Strategy = require('passport-auth0'),
     axios = require('axios');
     controller = require('./controller');
+    cors = require('cors')
 
 const port = 3010;
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 app.use(session({
     secret: process.env.SECRET,
     resave: false,

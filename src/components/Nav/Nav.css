@@ -29,6 +29,7 @@
     color: #fff;
     font-size: 30px;
     margin-right: 20px;
+    text-decoration: none;
 }
 
 .header-home {
@@ -71,6 +72,15 @@
     width: 100px;
     color: white;
     margin-right:20px;
+}
+
+.login-container {
+    display: flex;
+    justify-content: space-around;
+    height:50%;
+    width: 100%;
+    background-color: orange;
+    align-items: center;
 }
 
 .header-logout {

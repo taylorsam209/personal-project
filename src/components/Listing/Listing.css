@@ -12,19 +12,30 @@
 
 .left-content-container {
     height: 100%;
-    width:50%;
+    width:40%;
     background-color: cornflowerblue; 
 
 }
 
 .right-content-container {
-    height:100%;
-    width: 50%;
+    min-height: 100%;
+    width: 60%;
     background-color: olive;
 }
 
-/* .listing-container {
-    height: 35%;
+.listing-container {
+    height: 40%;
     width: 90%;
-    background-color: gray;
-} */
+    display: flex;
+    background-color: tomato;
+    border: 1px solid black;
+    margin:20px;
+    align-content: center
+}
+.listing-photo {
+    height: 80%;
+    width: 35%;
+    margin: 20px;
+    object-fit: cover;
+    overflow: hidden;
+}

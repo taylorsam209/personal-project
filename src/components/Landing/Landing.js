@@ -50,4 +50,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { getListings, getCurrentUser })(Landing);
+export default connect(mapStateToProps, { getListings, getCurrentUser})(Landing);

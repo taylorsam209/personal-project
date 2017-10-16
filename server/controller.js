@@ -17,11 +17,12 @@ module.exports = {
     addRestaurant: (req, res, next) => {
         console.log("added")
         console.log(req.body)
+        console.log('the user id is ', req.user)
         const db = req.app.get('db');
         const { userId, restaurantId } = req.body;
         console.log(userId, restaurantId)
         db.add_favorite_restaurant([userId, restaurantId])
-            .then(() => res.status(200).send())
+            .then((data) => res.status(200).send())
             .catch(() => res.status(500).send())
     },
 
