@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import "./Landing.css"
 import { connect } from 'react-redux';
-import { getListings, getCurrentUser } from '../../ducks/reducer';
+import { getListings, getCurrentUser, clearListings } from '../../ducks/reducer';
 import { Link } from 'react-router-dom';
 
 class Landing extends Component {
@@ -15,6 +15,7 @@ class Landing extends Component {
   }
 
   componentDidMount () {
+    // this.props.clearListings() // resets Listing on redux state
     this.props.getCurrentUser()
   }
 
@@ -50,4 +51,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { getListings, getCurrentUser})(Landing);
+export default connect(mapStateToProps, { getListings, getCurrentUser, clearListings})(Landing);

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./Nav.css";
-import axios from 'axios';
 import { getCurrentUser } from '../../ducks/reducer';
 import { connect } from 'react-redux';
-import Profile from '../Profile/Profile';
 
 class Nav extends Component {
 
     handleLogin() {
-        if (this.props.userId === 0) {
+        if (!this.props.user) {
             return <a href={process.env.REACT_APP_LOGIN}><button>Login</button></a>
         } else
             return (
@@ -43,7 +41,7 @@ class Nav extends Component {
 
 function mapStateToProps(state) {
     return {
-        userId: state.userId
+        user: state.user
     }
 
 }

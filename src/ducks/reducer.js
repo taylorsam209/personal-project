@@ -3,7 +3,7 @@ import axios from 'axios';
 const initialState = {
     listings: [],
     currentRestaurant: [],
-    userId: 0,
+    user: {},
     restaurantId: 0
 }
 
@@ -11,7 +11,23 @@ const FULFILLED = '_FULFILLED';
 const GET_LISTINGS = 'GET_LISTINGS';
 const ADD_FAV_RESTAURANT = 'ADD_FAV_RESTAURANT';
 const ADD_CURRENT_RESTAURANT = "ADD_CURRENT_RESTAURANT";
-const GET_USER_ID = "GET_USER_ID";
+const GET_USER= "GET_USER";
+const CLEAR_LISTINGS = "CLEAR_LISTINGS";
+const CLEAR_RESTAURANT = "CLEAR_RESTAURANT";
+
+export function clearListings() {
+    return{
+        type:CLEAR_LISTINGS,
+        payload: []
+    }
+}
+
+export function clearRestaurant() {
+    return {
+        type: CLEAR_RESTAURANT,
+        payload: []
+    }
+}
 
 export function getListings(location) {
     let listings = axios.get('/api/getlisting/' + location)
@@ -36,22 +52,28 @@ export function addCurrentRestaurant(id) {
 }
 
 export function getCurrentUser() {
-    let userID = axios.get('/auth/me').then(response => {
+    let user = axios.get('/auth/me').then(response => {
         console.log(response.data);
-        return response.data.id
+        return response.data
     })
     return {
-        type: GET_USER_ID,
-        payload: userID
+        type: GET_USER,
+        payload: user
     }
 }
 
-export function addFavRestaurant(user, restaurant) {
-    console.log("this is addfav", user)
+export function addFavRestaurant(userId, restaurant) {
+    console.log("this is addfav", userId)
     const data = {
-        userId: user,
+        userId: userId,
         restaurantId: restaurant
     }
+    if(data.userId===undefined) {
+        alert("Please login to add favorite restaurants.")
+        return {
+            type: ADD_FAV_RESTAURANT
+        }
+    } else 
     axios.post('/api/addRestaurant', data).then(response => {
             console.log(response)
             alert("Restaurant has been added to favorites!")}).catch(err => {
@@ -68,10 +90,14 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { listings: action.payload })
         case ADD_CURRENT_RESTAURANT + FULFILLED:
             return Object.assign({}, state, { currentRestaurant: action.payload })
-        case GET_USER_ID + FULFILLED:
-            return Object.assign({}, state, { userId: action.payload })
+        case GET_USER + FULFILLED:
+            return Object.assign({}, state, { user: action.payload })
         case ADD_FAV_RESTAURANT + FULFILLED:
             return Object.assign({}, state)
+            case CLEAR_LISTINGS:
+            return Object.assign({}, state, {listings: action.payload})
+            case CLEAR_RESTAURANT:
+            return Object.assign({}, state, {currentRestaurant:action.payload})
 
         default:
             return state;

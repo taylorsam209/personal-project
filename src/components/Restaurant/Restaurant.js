@@ -7,19 +7,20 @@ import { connect } from 'react-redux';
 
 class Restaurant extends Component {
   render() {
-    const { currentRestaurant } = this.props;
+    console.log(this.props.currentRestaurant)
+    const { name, image_url, price, rating, url } = this.props.currentRestaurant;
     return (
       <div className="Restaurant">
         <Nav header="Restaurant" />
-        <h1>{currentRestaurant.name}</h1>
+        <h1>{name}</h1>
         <div className="listing-container">
           <div className="listing-photo-container">
-            <img key src={currentRestaurant.image_url} alt="restaurant" />
+            <img key src={image_url} alt="restaurant" />
           </div>
           <div className="listing-description-container">
-            Price: {currentRestaurant.price}
-            Yelp Rating: {currentRestaurant.rating}
-            <a target="_blank" href={currentRestaurant.url}>Check out their Yelp Page!</a>
+            Price: {price}
+            Yelp Rating: {rating}
+            <a target="_blank" href={url}>Check out their Yelp Page!</a>
           </div>
           <button className="add-listing-btn">Save Restaurant</button>
         </div>

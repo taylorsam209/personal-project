@@ -54,7 +54,7 @@ app.get('/auth/callback', passport.authenticate('auth0', {
 
 app.get('/auth/me', (req, res) => {
     if(!req.user) {
-        return res.status(404).send("User not found.")
+        return res.status(200).send(false)
     }
     return res.status(200).send(req.user);
 })
@@ -74,11 +74,6 @@ passport.deserializeUser(function (id, done) {
             done(null, user[0]);
         })
 })
-
-// app.get('/api/getlisting/:location', (req, res) => {
-//     console.log("Backend is connected")
-//     res.status(200).send("It works")
-// })
 
 app.get('/api/getlisting/:location', controller.readListing) //Search input returns listing of restaurants
 app.get('/api/getRestaurant/:id', controller.readRestaurant) //get single restaurant by yelp-id in database and makes request to yelp
