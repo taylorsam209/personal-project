@@ -4,14 +4,25 @@
 }
 
 .background-img-container {
-    background-image: url(https://healthyforgood.heart.org/-/media/aha/h4gm/article-images/how-to-eat-more-fruits-and-veg.jpg);
-    height:80vh;
+    background-image: url("../../assets/landing-background.jpg");
     width: 80%;
+    height: 85vh;
     color:white;
     margin: auto;
-    padding-top:20px;
     background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 
+}
+
+.input-bar {
+    width:40%;
+    margin-left:auto;
+    margin-right: auto;
+    border-radius: 5px;
 }
 
 .description-container{

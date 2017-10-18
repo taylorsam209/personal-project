@@ -23,12 +23,12 @@ class Landing extends Component {
     const { getListings } = this.props;
     return (
       <div className="Landing">
-        <Nav header='Green Fork' />
+        <Nav header='The Green Fork' />
         <div className="background-img-container">
-          <h2 className="input-bar-title">Find Vegan & Vegetarian near...</h2>
+          <div className="input-bar-title"><h2>Find Vegan & Vegetarian near...</h2></div>
           <input type="text" value={this.state.input} onChange={(e) => { this.setState({ input: e.target.value }) }} className="input-bar" placeholder="Enter city" />
           <Link to='/listing'>
-            <button onClick={() => { getListings(this.state.input) }}>Submit</button>
+          <button onClick={() => { getListings(this.state.input) }}>Submit</button>
           </Link>
           <div className="description-container">
             <h3>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
