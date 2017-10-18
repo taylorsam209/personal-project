@@ -8,9 +8,10 @@ import { addCurrentRestaurant, addFavRestaurant, clearRestaurant } from '../../d
 
 class Listing extends Component {
 
-  // componentDidMount() {
-  //   this.props.clearRestaurant(); // Resets currentRestaurant on redux state
-  // }
+  componentDidMount() {
+    this.props.clearRestaurant(); // Resets currentRestaurant on redux state
+  }
+  
   render() {
 
     console.log(this.props.listings)

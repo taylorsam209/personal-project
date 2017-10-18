@@ -8,14 +8,19 @@
     width: 80%;
     height: 85vh;
     color:white;
+    padding: 50px;
     margin: auto;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     
 
+}
+
+.input-bar-title {
+margin-top:100px;
 }
 
 .input-bar {

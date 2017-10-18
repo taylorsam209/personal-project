@@ -15,7 +15,7 @@ class Landing extends Component {
   }
 
   componentDidMount () {
-    // this.props.clearListings() // resets Listing on redux state
+    this.props.clearListings() // resets Listing on redux state
     this.props.getCurrentUser()
   }
 
@@ -26,7 +26,7 @@ class Landing extends Component {
         <Nav header='The Green Fork' />
         <div className="background-img-container">
           <div className="input-bar-title"><h2>Find Vegan & Vegetarian near...</h2></div>
-          <input type="text" value={this.state.input} onChange={(e) => { this.setState({ input: e.target.value }) }} className="input-bar" placeholder="Enter city" />
+          <input className="input-bar" type="text" value={this.state.input} onChange={(e) => { this.setState({ input: e.target.value }) }}  placeholder="Enter city" />
           <Link to='/listing'>
           <button onClick={() => { getListings(this.state.input) }}>Submit</button>
           </Link>

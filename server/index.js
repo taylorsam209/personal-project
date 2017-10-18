@@ -79,7 +79,6 @@ app.get('/api/getlisting/:location', controller.readListing) //Search input retu
 app.get('/api/getRestaurant/:id', controller.readRestaurant) //get single restaurant by yelp-id in database and makes request to yelp
 app.post('/api/addRestaurant', controller.addRestaurant)
 app.get('/api/getfavlisting/:id', controller.readFavListing)
-// app.delete('/api/deletefavrestaurant/:id', controller.deleteFavRestaurant)
-
+app.delete('/api/deletefavrestaurant', controller.deleteFavRestaurant)
 
 app.listen(port, () => console.log(`Running on port ${port}`))
