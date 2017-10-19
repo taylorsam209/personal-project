@@ -23,7 +23,7 @@ class Landing extends Component {
     const { getListings } = this.props;
     return (
       <div className="Landing">
-        <Nav header='The Green Fork' />
+        <Nav header='Welcome' />
         <div className="background-img-container">
           <div className="input-bar-title"><h2>Find Vegan & Vegetarian near...</h2></div>
           <input className="input-bar" type="text" value={this.state.input} onChange={(e) => { this.setState({ input: e.target.value }) }}  placeholder="Enter city" />

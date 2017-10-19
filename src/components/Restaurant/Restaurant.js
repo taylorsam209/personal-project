@@ -13,7 +13,7 @@ class Restaurant extends Component {
       <div className="Restaurant">
         <Nav header="Restaurant" />
         <h1>{name}</h1>
-        <div className="listing-container">
+        <div className="restaurant-container">
           <div className="listing-photo-container">
             <img key src={image_url} alt="restaurant" />
           </div>

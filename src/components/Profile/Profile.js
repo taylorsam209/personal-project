@@ -3,8 +3,8 @@ import './Profile.css';
 import Nav from '../Nav/Nav';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
-import {addCurrentRestaurant, clearRestaurant} from "../../ducks/reducer";
+import { Link } from 'react-router-dom';
+import { addCurrentRestaurant, clearRestaurant } from "../../ducks/reducer";
 
 
 class Profile extends Component {
@@ -27,7 +27,7 @@ class Profile extends Component {
           favListing: response.data
         })
       });
-      this.props.clearRestaurant();
+    this.props.clearRestaurant();
   }
 
   render() {
@@ -36,10 +36,11 @@ class Profile extends Component {
     return (
       <div className="Profile">
         <Nav header="Profile" />
-        <h1>{user_name}</h1>
-        <img src={img} alt="profile" />
+
         <div className="content-container">
           <div className='left-content-container'>
+            <h1>{user_name}</h1>
+            <img src={img} alt="profile" />
           </div>
           <div className="right-content-container">
             {this.state.favListing.map((e, i, arr) => {
@@ -50,14 +51,15 @@ class Profile extends Component {
                     <Link to={`/restaurant/${e.id}`}><h3 onClick={() => { this.props.addCurrentRestaurant(e.id) }}>{e.name}</h3> </Link>
                     <h4>{e.location.display_address[0] + ' ' + e.location.display_address[1]} </h4>
                     <p>Price: {e.price}
-                    Yelp Rating: {e.rating}
+                      Yelp Rating: {e.rating}
                     </p>
                     <div>
                       <button className="add-listing-btn">Delete Restaurant</button>
                     </div>
                   </div>
                 </div>
-              )})}
+              )
+            })}
           </div>
         </div>
       </div>
@@ -71,4 +73,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {addCurrentRestaurant, clearRestaurant})(Profile);
+export default connect(mapStateToProps, { addCurrentRestaurant, clearRestaurant })(Profile);

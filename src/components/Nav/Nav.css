@@ -6,7 +6,6 @@
     box-shadow: 0 10px 20px 0 rgba(0,0,0,.1), 0 6px 6px 0 rgba(0,0,0,.2);
     height: 60px;
     min-width: 100%;
-    margin-bottom: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,11 +25,11 @@
     align-items: center;
 }
 
-.header-helo {
+.header-logo {
     font-weight: 700;
-    font-family: sans-serif;
+    font-family:dancing script;
     color: #fff;
-    font-size: 30px;
+    font-size: 35px;
     margin-right: 20px;
     text-decoration: none;
 }

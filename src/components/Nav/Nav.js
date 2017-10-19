@@ -25,7 +25,7 @@ class Nav extends Component {
             <div className="header-parent">
                 <div className="header-container">
                     <div className="header-child-left">
-                        <Link to="/" className="header-helo" >Helo</Link>
+                        <Link to="/" className="header-logo" >The Green Fork</Link>
                     </div>
                     <div className="header-child-mid">
                         <span className="header-word">{header}</span>
