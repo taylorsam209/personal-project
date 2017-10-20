@@ -25,11 +25,9 @@ class Landing extends Component {
       <div className="Landing">
         <Nav header='Welcome' />
         <div className="background-img-container">
-          <div className="input-bar-title"><h2>Find Vegan & Vegetarian near...</h2></div>
-          <input className="input-bar" type="text" value={this.state.input} onChange={(e) => { this.setState({ input: e.target.value }) }}  placeholder="Enter city" />
-          <Link to='/listing'>
-          <button onClick={() => { getListings(this.state.input) }}>Submit</button>
-          </Link>
+          <input className="input-bar" type="text" value={this.state.input} onChange={(e) => { this.setState({ input: e.target.value }) }}  placeholder="Find Vegan & Vegetarian near..." />
+          
+          <Link to='/listing' className="submit-btn" onClick={() => { getListings(this.state.input) }}>Submit</Link>
           <div className="description-container">
             <h3>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

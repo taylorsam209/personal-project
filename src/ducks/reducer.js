@@ -73,6 +73,8 @@ export function addFavRestaurant(userId, restaurant) {
         return {
             type: ADD_FAV_RESTAURANT
         }
+    
+
     } else 
     axios.post('/api/addRestaurant', data).then(response => {
             console.log(response)

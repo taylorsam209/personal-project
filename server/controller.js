@@ -4,7 +4,7 @@ module.exports = {
 
     readListing: (req, res) => {
         const location = req.params.location
-        axios.get(`https://api.yelp.com/v3/businesses/search?term=restaurants,food&categories=vegan,vegetarian,organic_stores,farmersmarket,ethicgrocery&radius=35000&limit=50&location=${location}`,
+        axios.get(`https://api.yelp.com/v3/businesses/search?term=vegan&categories=restaurants,food,vegan,vegetarian,organic_stores,farmersmarket,ethicgrocery&radius=20000&limit=50&location=${location}`,
             { headers: { "Authorization": `Bearer ${process.env.YELP_ACCESS_TOKEN}` } })
             .then(response => res.status(200).send(response.data.businesses))
     },
