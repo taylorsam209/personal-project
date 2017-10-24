@@ -26,23 +26,25 @@ class Landing extends Component {
     return (
       <div className="Landing">
         <Nav header='Welcome' style="margin-bottom: 60px" />
-           <div class="video-container">
-            <video autoPlay loop>
-              <source src={hotpot} type="video/mp4" />.
-             </video>
-          </div>
-   
-         <div className="background-img-container">
-          <div className="search-container">
-            <input className="input-bar" type="text" value={this.state.input} onChange={(e) => { this.setState({ input: e.target.value }) }} placeholder="Find Vegan & Vegetarian near..." />
-            <Link to='/listing' className="submit-btn" onClick={() => { getListings(this.state.input) }}>Submit</Link>
-          </div>
-          <div className="description-container">
-            <h3> The Green Fork was created to allow you to locate vegeterian and vegan friendly resources within the community.
+        <div class="video-container">
+          <div className="video-overlay">
+            <div className="search-container">
+              <input className="input-bar" type="text" value={this.state.input} onChange={(e) => { this.setState({ input: e.target.value }) }} placeholder="Find Vegan & Vegetarian near..." />
+              <Link to='/listing' className="submit-btn" onClick={() => { getListings(this.state.input) }}>Submit</Link>
+            </div>
+            <div className="description-container">
+              <h3> The Green Fork was created to allow you to locate vegeterian and vegan friendly resources within the community.
               We took the hardwork out of your hands and let you focus on having a variety of choices. Give it a try, begin your search!
                 </h3>
+            </div>
           </div>
-        </div> 
+          <video autoPlay loop>
+            <source src={hotpot} type="video/mp4" />.
+             </video>
+
+        </div>
+
+
       </div>
     );
   }
