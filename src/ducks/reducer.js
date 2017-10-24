@@ -73,12 +73,9 @@ export function addFavRestaurant(userId, restaurant) {
         return {
             type: ADD_FAV_RESTAURANT
         }
-    
-
     } else 
     axios.post('/api/addRestaurant', data).then(response => {
-            console.log(response)
-            alert("Restaurant has been added to favorites!")}).catch(err => {
+            alert(response.data)}).catch(err => {
             console.log("Create user error", err)
         })
     return {

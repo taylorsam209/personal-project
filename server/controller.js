@@ -18,10 +18,19 @@ module.exports = {
     addRestaurant: (req, res) => {
         const db = req.app.get('db');
         const { userId, restaurantId } = req.body;
-        console.log(userId, restaurantId)
-        db.add_favorite_restaurant([userId, restaurantId])
-            .then((data) => res.status(200).send())
-            .catch(() => res.status(500).send())
+        db.find_fav_restaurants(userId)
+            .then(response => {
+                const itemExist = response.filter(obj => {
+                    return obj.restaurant_id === restaurantId
+                })
+                if (!itemExist.length) {
+                    db.add_favorite_restaurant([userId, restaurantId])
+                        .then((data) => res.status(200).send("Restaurant has been added to favorites!"))
+                        .catch(() => res.status(500).send())
+                } else {
+                    res.status(200).send("Restaurant is already added in profile.")
+                }
+            })
     },
 
     readFavListing: (req, res) => {
@@ -31,6 +40,7 @@ module.exports = {
             .then(yelpIdList => {
                 let favListing = [];
                 console.log("YelpID List", yelpIdList)
+                if (!yelpIdList.length) { res.status(200).send(favListing) }
                 for (let i = 0; i < yelpIdList.length; i++) {
                     let yelpId = yelpIdList[i].restaurant_id;
                     GetMyResourceData(yelpId);
@@ -39,11 +49,17 @@ module.exports = {
                     axios.get(`https://api.yelp.com/v3/businesses/${yelpId}`,
                         { headers: { "Authorization": `Bearer ${process.env.YELP_ACCESS_TOKEN}` } })
                         .then(response => {
+                            console.log("Running")
                             count++
+                            console.log(count, yelpIdList.length)
                             favListing.push(response.data)
                             if (count === yelpIdList.length) {
                                 res.send(favListing)
                             }
+                        })
+                        .catch(err => {
+                            console.log(count, "err")
+                            count++
                         })
                 }
                 console.log(favListing)
@@ -53,8 +69,36 @@ module.exports = {
     deleteFavRestaurant: (req, res) => {
         const db = req.app.get('db');
         const { userId, restaurantId } = req.query;
+        var count = 0;
         db.delete_fav_restaurant([userId, restaurantId])
-            .then(response => res.status(200).send());
-    },
+            .then(response => {
+                db.find_fav_restaurants(userId)
+                    .then(yelpIdList => {
+                        let favListing = [];
+                        console.log("YelpID List", yelpIdList)
+                        if (!yelpIdList.length) { res.status(200).send(favListing) }
+                        for (let i = 0; i < yelpIdList.length; i++) {
+                            let yelpId = yelpIdList[i].restaurant_id;
+                            GetMyResourceData(yelpId);
+                        }
+                        function GetMyResourceData(yelpId) {
+                            axios.get(`https://api.yelp.com/v3/businesses/${yelpId}`,
+                                { headers: { "Authorization": `Bearer ${process.env.YELP_ACCESS_TOKEN}` } })
+                                .then(response => {
+                                    count++
+                                    favListing.push(response.data)
+                                    if (count === yelpIdList.length) {
+                                        res.send(favListing)
+                                    }
+                                })
+                                .catch(err => {
+                                    console.log(count, "err")
+                                    count++
+                                })
+                        }
+                        console.log(favListing)
+                    })
+            });
+    }
 
 }

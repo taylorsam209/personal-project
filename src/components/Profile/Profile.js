@@ -14,14 +14,22 @@ class Profile extends Component {
     this.state = {
       favListing: []
     }
+
+    this.deleteFavRestaurant.bind(this);
   }
 
-  deleteFavRestaurant() {
-    axios.get(`/api/deletefavrestaurant/?userId=${this.props.user.id}&restaurantId=`)
+  deleteFavRestaurant(id, restaurant) {
+    axios.delete(`/api/deletefavrestaurant/?userId=${id}&restaurantId=${restaurant}`)
+      .then(response => {
+        console.log(response.data)
+        this.setState({
+          favListing:response.data
+        })
+      })
   }
 
   componentDidMount() {
-    axios.get(`/api/getfavlisting/${this.props.user.id}`)
+    axios.get(`http://localhost:3010/api/getfavlisting/${this.props.user.id}`)
       .then(response => {
         this.setState({
           favListing: response.data
@@ -32,7 +40,7 @@ class Profile extends Component {
 
   render() {
     console.log("This is Profile Component", this.state.favListing)
-    const { id, user_name, email, img } = this.props.user;
+    const { id, user_name, img } = this.props.user;
     return (
       <div className="Profile">
         <Nav header="Profile" />
@@ -54,7 +62,7 @@ class Profile extends Component {
                       Yelp Rating: {e.rating}
                     </p>
                     <div>
-                      <button className="add-listing-btn">Delete Restaurant</button>
+                      {<button className="add-listing-btn" onClick={() => { this.deleteFavRestaurant(id, e.id) }} >Delete Restaurant</button>}
                     </div>
                   </div>
                 </div>
