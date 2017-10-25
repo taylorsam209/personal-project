@@ -11,22 +11,27 @@
     "express-session": "^1.15.6",
     "massive": "^4.4.0",
     "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.1.1",
     "passport": "^0.4.0",
     "passport-auth0": "^0.6.0",
     "react": "^16.0.0",
+    "react-bootstrap": "^0.31.4",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-promise-middleware": "^4.4.1",
     "request": "^2.83.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    "test": "node scripts/test.js --env=jsdom"
   },
   "main": "./server/index.js",
   "proxy": "http://localhost:3010"

@@ -4,7 +4,6 @@ import "./Landing.css";
 import { connect } from 'react-redux';
 import { getListings, getCurrentUser, clearListings } from '../../ducks/reducer';
 import { Link } from 'react-router-dom';
-import cucumber from '../../assets/The_Cucumber.mp4';
 import hotpot from '../../assets/hotpot.mp4';
 
 class Landing extends Component {
@@ -25,8 +24,8 @@ class Landing extends Component {
     const { getListings } = this.props;
     return (
       <div className="Landing">
-        <Nav header='Welcome' style="margin-bottom: 60px" />
-        <div class="video-container">
+          <Nav header='Welcome'/>
+        <div className="video-container">
           <div className="video-overlay">
             <div className="search-container">
               <input className="input-bar" type="text" value={this.state.input} onChange={(e) => { this.setState({ input: e.target.value }) }} placeholder="Find Vegan & Vegetarian near..." />

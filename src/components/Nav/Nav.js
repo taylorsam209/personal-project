@@ -4,7 +4,6 @@ import "./Nav.css";
 import { getCurrentUser } from '../../ducks/reducer';
 import { connect } from 'react-redux';
 import logo from "../../assets/greenfork.jpg";
-import vegan from "../../assets/vegan.png";
 
 class Nav extends Component {
 

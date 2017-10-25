@@ -5,15 +5,13 @@ import Nav from '../Nav/Nav';
 import { connect } from 'react-redux';
 import { addCurrentRestaurant, addFavRestaurant, clearRestaurant } from '../../ducks/reducer';
 
-
 class Listing extends Component {
 
   componentDidMount() {
-    this.props.clearRestaurant(); // Resets currentRestaurant on redux state
+    this.props.clearRestaurant();
   }
   
   render() {
-
     console.log(this.props.listings)
     return (
       <div className="Listing">
@@ -27,21 +25,25 @@ class Listing extends Component {
                 <div key={i} className="listing-container">
                   <img className="listing-photo" src={e.image_url} alt="restaurant" />
                   <div className="listing-description-container">
-                    <Link to={`/restaurant/${e.id}`}><h3 onClick={() => { this.props.addCurrentRestaurant(e.id) }}>{e.name}</h3> </Link>
+                    <Link to={`/restaurant/${e.id}`}><h3 className='restaurant-title' onClick={() => { this.props.addCurrentRestaurant(e.id) }}>{e.name}</h3> </Link>
                     <h4>{e.location.display_address[0] + ' ' + e.location.display_address[1]} </h4>
                     <p>Price: {e.price}
-                    Yelp Rating: {e.rating}
+                      Yelp Rating: {e.rating}
                     </p>
-                    <div>
-                      <button className="add-listing-btn" onClick={() => { this.props.addFavRestaurant(this.props.user.id, e.id) }}>Save Restaurant</button>
-                    </div>
+                  </div>
+                  <div>
+                    <button className="add-listing-btn" onClick={() => { this.props.addFavRestaurant(this.props.user.id, e.id) }}>Save Restaurant</button>
                   </div>
                 </div>
-              )})}
+              )
+            })}
+
           </div>
         </div>
       </div>
-    );}}
+    );
+  }
+}
 
 function mapStateToProps(state) {
   console.log(state)
