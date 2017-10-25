@@ -8,9 +8,9 @@ import { addCurrentRestaurant, addFavRestaurant, clearRestaurant } from '../../d
 class Listing extends Component {
 
   componentDidMount() {
-    this.props.clearRestaurant();
+    // this.props.clearRestaurant();
   }
-  
+
   render() {
     console.log(this.props.listings)
     return (
@@ -25,7 +25,7 @@ class Listing extends Component {
                 <div key={i} className="listing-container">
                   <img className="listing-photo" src={e.image_url} alt="restaurant" />
                   <div className="listing-description-container">
-                    <Link to={`/restaurant/${e.id}`}><h3 className='restaurant-title' onClick={() => { this.props.addCurrentRestaurant(e.id) }}>{e.name}</h3> </Link>
+                    <Link to={`/restaurant/${e.id}`}><h3 className='restaurant-title' onClick={() => { if (this.props.currentRestaurant.id !== e.id) { this.props.clearRestaurant() } this.props.addCurrentRestaurant(e.id) }}>{e.name}</h3> </Link>
                     <h4>{e.location.display_address[0] + ' ' + e.location.display_address[1]} </h4>
                     <p>Price: {e.price}
                       Yelp Rating: {e.rating}
@@ -49,7 +49,8 @@ function mapStateToProps(state) {
   console.log(state)
   return {
     listings: state.listings,
-    user: state.user
+    user: state.user,
+    currentRestaurant: state.currentRestaurant
   }
 }
 

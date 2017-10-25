@@ -35,7 +35,6 @@ class Profile extends Component {
           favListing: response.data
         })
       });
-    this.props.clearRestaurant();
   }
 
   render() {
@@ -56,7 +55,7 @@ class Profile extends Component {
                 <div key={i} className="listing-container">
                   <img className="listing-photo" src={e.image_url} alt="restaurant" />
                   <div className="listing-description-container">
-                    <Link to={`/restaurant/${e.id}`}><h3 onClick={() => { this.props.addCurrentRestaurant(e.id) }}>{e.name}</h3> </Link>
+                    <Link to={`/restaurant/${e.id}`}><h3 onClick={() => {if (this.props.currentRestaurant.id !== e.id) { this.props.clearRestaurant() } this.props.addCurrentRestaurant(e.id) }}>{e.name}</h3> </Link>
                     <h4>{e.location.display_address[0] + ' ' + e.location.display_address[1]} </h4>
                     <p>Price: {e.price}
                       Yelp Rating: {e.rating}
@@ -77,7 +76,8 @@ class Profile extends Component {
 
 function mapStateToProps(state) {
   return {
-    user: state.user
+    user: state.user,
+    currentRestaurant: state.currentRestaurant
   }
 }
 

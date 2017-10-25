@@ -1,71 +1,76 @@
-
-
+@import url("https://fonts.googleapis.com/css?family=Lora|Ubuntu");
 .restaurant-container {
-display:flex;
-flex-direction: column;
-}
+  display: flex;
+  flex-direction: column; }
 
-.listing-photo-container {
-    height: 400px;
-    width: 700px;
-    overflow: hidden;
-    position: relative;
-}
+.restaurant-photo-container {
+  height: 400px;
+  width: 700px;
+  overflow: hidden;
+  position: relative; }
 
-.restaurant .image {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-size: cover;
-    transition: left .4s; /* transition lets photos slide over smoothly */
-  }
+.Restaurant .image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  transition: left .4s;
+  /* transition lets photos slide over smoothly */ }
+
+.spinner {
+  height: 100px;
+  width: 100px;
+  border: solid 2px black;
+  animation: loading 1s infinite;
+  margin: auto; }
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 
 .button {
-    cursor: pointer;
-    color: rgb(1, 2, 1);
-    padding: 10px 20px;
-    border-radius: 3px;
-    border: medium solid black;
-    background-color: goldenrod;
-    transition: .4s;
-}
+  cursor: pointer;
+  color: #010201;
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: medium solid black;
+  background-color: goldenrod;
+  transition: .4s; }
 
-    .button:hover {
-        color: white;
-        background-color: blue;
-    }
+.button:hover {
+  color: white;
+  background-color: blue; }
 
-    .restaurant-description-container {
-        height: 200px;
-        color: black;
-    }
+.restaurant-description-container {
+  height: 200px;
+  color: black; }
 
-    .yelp-btn {
-        height:50px;
-        width:220px;
-        margin-left: auto;
-        margin-right: auto;
-        color: white;
-        border: solid 2px black;
-        background-color: rgb(255, 49, 49);
-        text-align: center;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.yelp-btn {
+  height: 50px;
+  width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  border: solid 2px black;
+  background-color: #ff3131;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
-    .add-restaurant-btn {
-        height: 50px;
-        width: 150px;
-        margin-left: auto;
-        margin-right: auto;
-        color: rgb(52, 32, 105);
-        background: rgb(0, 255, 76);
-        border:solid 3px gold;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
+.add-restaurant-btn {
+  cursor: pointer;
+  height: 50px;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #342069;
+  background: #00ff4c;
+  border: solid 3px gold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
