@@ -17,7 +17,7 @@ class Landing extends Component {
 
   componentDidMount() {
     // this.props.clearListings() // resets Listing on redux state
-    this.props.getCurrentUser()
+    this.props.getCurrentUser();
   }
 
   render() {
@@ -32,9 +32,8 @@ class Landing extends Component {
               <Link to='/listing' className="submit-btn" onClick={() => {if(this.props.listings !== getListings(this.state.input)){this.props.clearListings()} getListings(this.state.input) }}>Submit</Link>
             </div>
             <div className="description-container">
-              <h3> The Green Fork was created to allow you to locate vegeterian and vegan friendly resources within the community.
-              We took the hardwork out of your hands and let you focus on having a variety of choices. Give it a try, begin your search!
-                </h3>
+              <h1>  Desire. Explore.</h1>
+              <h1> Discover. Nourish.</h1>
             </div>
           </div>
           <video autoPlay loop>

@@ -24,11 +24,10 @@ class Nav extends Component {
 
         return (
             <div>
-                <img className="logo" src={logo} alt="fork" />
                 <div className="header-parent">
                     <div className="header-container">
                         <div className="header-child-left">
-                            <Link to="/" className="header-logo" >The Green Fork</Link>
+                            <Link to="/" className="header-logo" >Herb Finder</Link>
                         </div>
                         <div className="header-child-mid">
                             <span className="header-word">{header}</span>

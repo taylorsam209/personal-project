@@ -1,15 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Lora|Ubuntu");
-.restaurant-container {
+.Restaurant {
+  min-height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #F3E9D2; }
 
-.restaurant-photo-container {
+.photo-container {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-top: 50px; }
+
+.carousel-container {
   height: 400px;
   width: 700px;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: gray; }
 
-.Restaurant .image {
+.image {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -22,6 +37,7 @@
   width: 100px;
   border: solid 2px black;
   animation: loading 1s infinite;
+  position: absolute;
   margin: auto; }
 
 @keyframes loading {
@@ -30,22 +46,32 @@
   to {
     transform: rotate(360deg); } }
 
-.button {
+.carousel-btn {
   cursor: pointer;
   color: #010201;
   padding: 10px 20px;
   border-radius: 3px;
   border: medium solid black;
-  background-color: goldenrod;
-  transition: .4s; }
+  background-color: #114B5F;
+  transition: .4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Ubuntu;
+  font-size: 2em;
+  font-weight: bold;
+  color: black; }
 
-.button:hover {
-  color: white;
-  background-color: blue; }
+.carousel-btn:hover {
+  background-color: #C6DABF; }
 
 .restaurant-description-container {
-  height: 200px;
-  color: black; }
+  width: 80%;
+  margin: 20px auto 20px auto;
+  font-family: Lora;
+  color: black;
+  background-color: #1A936F;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .yelp-btn {
   height: 50px;
@@ -54,7 +80,7 @@
   margin-right: auto;
   color: white;
   border: solid 2px black;
-  background-color: #ff3131;
+  background-color: #da2727;
   text-align: center;
   font-weight: bold;
   display: flex;
@@ -68,8 +94,8 @@
   margin-left: auto;
   margin-right: auto;
   color: #342069;
-  background: #00ff4c;
-  border: solid 3px gold;
+  background: #88D498;
+  border: #88D498;
   text-align: center;
   display: flex;
   justify-content: center;
