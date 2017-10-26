@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lora|Ubuntu");
+@import url("https://fonts.googleapis.com/css?family=Lobster|Cabin");
 .Restaurant {
   min-height: 100%;
   width: 100%;
@@ -57,7 +57,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Ubuntu;
+  font-family: Lobster;
   font-size: 2em;
   font-weight: bold;
   color: black; }
@@ -68,7 +68,7 @@
 .restaurant-description-container {
   width: 80%;
   margin: 20px auto 20px auto;
-  font-family: Lora;
+  font-family: Cabin;
   color: black;
   background-color: #1A936F;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }

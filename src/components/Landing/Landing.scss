@@ -37,6 +37,9 @@
     align-items: center;
     align-content: center;
     justify-content: center;
+    animation-name: slideInDown;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
 .input-bar {
@@ -45,9 +48,10 @@
     font-size: 1.5em;
     text-align: center;
     font-family: $font-family-elegant;
-    color: $color-dark;
+    color: black;
     opacity: 0.85;
 }
+
 
 .submit-btn {
     height: 35px;
@@ -76,7 +80,42 @@ font-weight: bold;
 color: white;
 width: 75%;
 height: 50%;
-opacity: 0.78;
-
+opacity: 0.80;
+animation: fadein 5s;
 }
 
+
+.about-container{
+    width: 80%;
+    height: 40%;
+    margin: auto;
+    background-color: $color-light;
+    text-align: left;
+}
+
+.about-title{
+    font-family: $font-family-bold;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: left;
+}
+
+.about-description{
+    font-family: $font-family-elegant;
+    font-size:1.5em;
+}
+
+@keyframes slideInDown {
+   0% {
+       transform: translateY(-100%);
+       visibility: visible;
+   }
+   100% {
+       transform: translateY(0);
+   }
+} 
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

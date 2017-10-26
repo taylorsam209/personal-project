@@ -1,91 +1,66 @@
-@import url("https://fonts.googleapis.com/css?family=Lora|Ubuntu");
-.logo {
-  width: 40%; }
-
+@import url("https://fonts.googleapis.com/css?family=Lobster|Cabin");
 .header-parent {
-  color: white;
+  color: #0599fc;
   border-top: solid 1px #a8a8a8;
   border-bottom: solid 1px #a8a8a8;
   height: 60px;
-  min-width: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fa3636; }
-
-.header-container {
-  height: 100%;
-  width: 90%;
   box-sizing: border-box;
   padding: 0 20px;
   display: flex; }
-
-.header-child-left {
-  width: 20%;
-  display: flex;
-  align-items: center; }
-
-.header-logo {
-  font-weight: 700;
-  font-family: Ubuntu;
-  font-size: 30px;
-  margin-right: 20px;
-  text-decoration: none;
-  color: white; }
-
-.header-home {
-  height: 27px;
-  margin-right: 20px;
-  cursor: pointer; }
-
-.header-search {
-  height: 27px;
-  cursor: pointer;
-  position: relative;
-  top: 2px; }
-
-.header-word {
-  font-family: Ubuntu;
-  font-weight: bold;
-  font-size: 30px; }
-
-.header-child-mid {
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.header-child-right {
-  width: 20%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center; }
-
-.btn {
-  font-family: Lora;
-  font-weight: bold;
-  font-style: italic;
-  font-size: 1.5em;
-  padding: auto;
-  border: solid 2px black;
-  width: 60px;
-  border-radius: 5px;
-  color: white; }
-
-.login-container {
-  display: flex;
-  justify-content: space-around;
-  height: 50%;
-  width: 100%;
-  background-color: orange;
-  align-items: center; }
-
-.header-logout {
-  color: #fff;
-  font-size: 17px;
-  cursor: pointer;
-  font-weight: 400;
-  font-family: sans-serif; }
-
-.no-underline {
-  text-decoration: none; }
+  .header-parent .header-child-left {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .header-parent .header-child-left .logo-container {
+      color: #0599fc;
+      font-weight: 700;
+      font-family: Lobster;
+      font-size: 30px;
+      margin-right: 20px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .header-parent .header-child-left .logo {
+      height: 50px;
+      width: 50px; }
+  .header-parent .header-child-mid {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .header-parent .header-child-mid .header-title {
+      font-family: Lobster;
+      font-weight: bold;
+      font-size: 30px; }
+  .header-parent .header-child-right {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .header-parent .header-child-right .btn {
+      color: #0599fc;
+      font-family: Lobster;
+      font-weight: bold;
+      font-size: 1.5em;
+      border: solid 2px black;
+      width: 70px;
+      height: 35px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .header-parent .header-child-right .logged-in-container {
+      display: flex;
+      justify-content: space-around;
+      height: 50%;
+      width: 100%;
+      align-items: center; }

@@ -9,6 +9,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "font-awesome": "^4.7.0",
     "massive": "^4.4.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.1",
@@ -23,7 +24,8 @@
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-promise-middleware": "^4.4.1",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "sweetalert": "^2.0.8"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",

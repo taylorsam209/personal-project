@@ -3,6 +3,7 @@ import './Restaurant.css';
 import Nav from '../Nav/Nav';
 import { connect } from 'react-redux';
 import { addFavRestaurant } from '../../ducks/reducer';
+import 'font-awesome/css/font-awesome.min.css';
 
 
 let auto;
@@ -90,7 +91,8 @@ class Restaurant extends Component {
             <h1>Price range: {price}</h1>
             <h1>Yelp rating based on {review_count} reviews: {rating}</h1>
             <h1>Phone: {display_phone}</h1>
-            <a target="_blank" href={url} style={{textDecoration: "none"}}><div className='yelp-btn'>Check out their Yelp Page!</div></a>
+            <a target="_blank" href={url} style={{textDecoration: "none"}}><div className='yelp-btn'><i className="fa fa-yelp" aria-hidden="true"></i>
+Check out their Yelp Page!</div></a>
           <div className="add-restaurant-btn" onClick={() => { this.props.addFavRestaurant(this.props.user.id, id) }}>Save Restaurant</div>
         </div>
       </div>

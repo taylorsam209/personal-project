@@ -1,4 +1,5 @@
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const initialState = {
     listings: [],
@@ -69,13 +70,13 @@ export function addFavRestaurant(userId, restaurant) {
         restaurantId: restaurant
     }
     if(data.userId===undefined) {
-        alert("Please login to add favorite restaurants.")
+        swal("User not found.", "Please login to add favorite restaurants.","error")
         return {
             type: ADD_FAV_RESTAURANT
         }
     } else 
     axios.post('/api/addRestaurant', data).then(response => {
-            alert(response.data)}).catch(err => {
+        swal("Added to favorites!", "Go to profile to view your list!", "success")}).catch(err => {
             console.log("Create user error", err)
         })
     return {
