@@ -5,13 +5,6 @@
     height: 100%;
 }
 
-.video-container {
-    width: 100%;
-    margin: auto;
-    position: relative;
-    // opacity: 0.85;
-}
-
 .video-overlay {
     width: 100%;
     height:100%;
@@ -22,11 +15,14 @@
     z-index: 1;
 }
 
-.video-container {
+.video-container { 
+    width: 100%;
+    margin: auto;
+    position: relative;
     video {
     z-index: -1;
     width: 100%
-}
+    }
 }
 .search-container{
     width: 70%;
@@ -73,20 +69,29 @@
 }
 
 .description-container{
-margin: auto;
+    margin: auto;
 font-family: $font-family-bold;
-font-size: 35px;
+font-size: 30px;
 font-weight: bold;
 color: white;
 width: 75%;
 height: 50%;
 opacity: 0.80;
 animation: fadein 5s;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
+.bottom-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+}
 
 .about-container{
-    width: 80%;
+    width: 50%;
     height: 40%;
     margin: auto;
     background-color: $color-light;
@@ -105,6 +110,42 @@ animation: fadein 5s;
     font-size:1.5em;
 }
 
+.photo-container{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 50px;
+}
+.carousel-container {
+    height: 400px;
+    width: 700px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: gray; 
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover; 
+    transition: left .4s; /* transition lets photos slide over smoothly */
+  }
+
+  .spinner{
+      height: 100px;
+      width: 100px;
+      border: solid 2px black;
+      animation: loading 1s infinite;
+      position: absolute;
+      margin: auto;
+  }
+
 @keyframes slideInDown {
    0% {
        transform: translateY(-100%);
@@ -117,5 +158,10 @@ animation: fadein 5s;
 
 @keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 1; }
+    to   { opacity: .80; }
 }
+
+@keyframes loading {
+    from{transform: rotate(0deg); }
+    to{transform: rotate(360deg); }
+  }
