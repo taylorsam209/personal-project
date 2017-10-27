@@ -76,7 +76,12 @@ export function addFavRestaurant(userId, restaurant) {
         }
     } else 
     axios.post('/api/addRestaurant', data).then(response => {
-        swal("Added to favorites!", "Go to profile to view your list!", "success")}).catch(err => {
+        console.log(response.data)
+        if(response.data === "success") {
+        swal("Added to favorites!", "Go to profile to view your list!", "success")}
+    else {
+        swal("Attention", "Business already exists in your profile.", "warning")
+    }}).catch(err => {
             console.log("Create user error", err)
         })
     return {

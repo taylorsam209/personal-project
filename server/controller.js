@@ -27,10 +27,10 @@ module.exports = {
                 })
                 if (!itemExist.length) {
                     db.add_favorite_restaurant([userId, restaurantId])
-                        .then((data) => res.status(200).send("Restaurant has been added to favorites!"))
+                        .then((data) => res.status(200).send("success"))
                         .catch(() => res.status(500).send())
                 } else {
-                    res.status(200).send("Restaurant is already added in profile.")
+                    res.status(200).send("fail")
                 }
             })
     },

@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 import hotpot from '../../assets/hotpot.mp4';
 import vegan2 from "../../assets/vegan2.jpg";
 import freshveggie from "../../assets/fresh-veggies.jpeg";
+import mexicana from "../../assets/mexicana.png";
+import miso from "../../assets/miso.jpg";
+import pho from "../../assets/pho.jpg";
 
 let auto;
 const timer = 4000;
@@ -17,7 +20,7 @@ class Landing extends Component {
 
     this.state = {
       input: "",
-      pictures: [vegan2, freshveggie],
+      pictures: [vegan2, freshveggie, mexicana, miso, pho],
       counter: 1,
       direction: "forward"
     }
@@ -117,7 +120,7 @@ class Landing extends Component {
 function mapStateToProps(state) {
   if (!state) return {};
   return {
-    listings: state.listings
+    listings: state.listings,
   }
 }
 

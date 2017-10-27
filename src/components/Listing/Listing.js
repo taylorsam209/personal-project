@@ -7,39 +7,39 @@ import { addCurrentRestaurant, addFavRestaurant, clearRestaurant } from '../../d
 
 class Listing extends Component {
 
-  componentDidMount() {
-    // this.props.clearRestaurant();
-  }
-
   render() {
     console.log(this.props.listings)
     return (
       <div className="Listing">
         <Nav header="Results" />
-        <div className="content-container">
-          <div className='left-content-container'>
-          </div>
-          <div className="right-content-container">
-            {this.props.listings.map((e, i, arr) => {
-              return (
-                <div key={i} className="listing-container">
-                  <img className="listing-photo" src={e.image_url} alt="restaurant" />
-                  <div className="listing-description-container">
-                    <Link to={`/restaurant/${e.id}`}><h3 className='restaurant-title' onClick={() => { if (this.props.currentRestaurant.id !== e.id) { this.props.clearRestaurant() } this.props.addCurrentRestaurant(e.id) }}>{e.name}</h3> </Link>
-                    <h4>{e.location.display_address[0] + ' ' + e.location.display_address[1]} </h4>
-                    <p>Price: {e.price}
-                      Yelp Rating: {e.rating}
-                    </p>
-                  </div>
-                  <div>
-                    <button className="add-listing-btn" onClick={() => { this.props.addFavRestaurant(this.props.user.id, e.id) }}>Save Restaurant</button>
-                  </div>
+        {/* <div className="content-container"> */}
+        {/* <div className='left-content-container'>
+          </div> */}
+        <div className="right-content-container">
+          {this.props.listings.map((e, i, arr) => {
+            return (
+              <div key={i} className="listing-container">
+                <img className="listing-photo" src={e.image_url} alt="none available" />
+                <div className="listing-description-container">
+                  <Link style={{ textDecoration: "none" }} to={`/restaurant/${e.id}`}>
+                    <h2 className='restaurant-title' onClick={() => {
+                      if (this.props.currentRestaurant.id !== e.id) {
+                        this.props.clearRestaurant()
+                      }
+                      this.props.addCurrentRestaurant(e.id)
+                    }}>{e.name}</h2>
+                  </Link>
+                  <h4>{e.location.display_address[0] + ' ' + e.location.display_address[1]} </h4>
+                  <h4>Price range: {e.price} </h4>
+                  <h4> Yelp Rating: {e.rating} </h4>
                 </div>
-              )
-            })}
+                <div className="add-listing-btn" onClick={() => { this.props.addFavRestaurant(this.props.user.id, e.id) }}>Save Restaurant</div>
+              </div>
+            )
+          })}
 
-          </div>
         </div>
+        {/* </div> */}
       </div>
     );
   }
