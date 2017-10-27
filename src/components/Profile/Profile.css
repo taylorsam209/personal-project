@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster|Cabin");
+.Listing {
+  text-align: center; }
+
+.content-container {
+  background-color: red;
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  margin: 0 auto 0 auto; }
+
+.left-profile-container {
+  height: 100vh;
+  width: 40%;
+  background-color: #1A936F; }
+  .left-profile-container .profile-pic {
+    height: 230px;
+    width: 230px;
+    border: solid 2px #036fc7;
+    border-radius: 200px; }
+
+.right-favorite-container {
+  max-height: 100%;
+  width: 60%;
+  background-color: #114B5F;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: scroll; }
+  .right-favorite-container h1 {
+    margin-bottom: 20px;
+    background-color: #F3E9D2;
+    height: 50px; }
+
+.listing-container {
+  height: 200px;
+  width: 500px;
+  display: flex;
+  background-color: white;
+  border: 5px solid #505050;
+  margin: 20px;
+  align-content: center;
+  font-family: Cabin; }
+
+.listing-photo {
+  height: 160px;
+  width: 35%;
+  margin: 20px;
+  object-fit: cover;
+  overflow: hidden;
+  background-color: cornflowerblue; }
+
+.listing-description-container h4 {
+  margin: 5px; }
+
+.restaurant-title {
+  color: #201c1c;
+  text-decoration: none;
+  transition: color 1s; }
+
+.restaurant-title:hover {
+  color: #125bf8; }
+
+.add-listing-btn {
+  margin: 5px 5px 0 0;
+  cursor: pointer;
+  height: 35px;
+  width: 75px;
+  background-color: #eb3f39;
+  text-decoration: none;
+  color: white;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Lobster; }
+
+.add-listing-btn:hover {
+  background-color: #f3a09d; }

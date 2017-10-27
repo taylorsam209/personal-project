@@ -43,13 +43,14 @@ class Profile extends Component {
     return (
       <div className="Profile">
         <Nav header="Profile" />
-
         <div className="content-container">
-          <div className='left-content-container'>
+          <div className='left-profile-container'>
+            <h1> Hello! </h1>
+            <img className="profile-pic" src={img} alt="profile" />
             <h1>{user_name}</h1>
-            <img src={img} alt="profile" />
           </div>
-          <div className="right-content-container">
+          <div className="right-favorite-container">
+            <h1>Favorite Listings</h1>
             {this.state.favListing.map((e, i, arr) => {
               return (
                 <div key={i} className="listing-container">

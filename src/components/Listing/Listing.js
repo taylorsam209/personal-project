@@ -11,7 +11,7 @@ class Listing extends Component {
     console.log(this.props.listings)
     return (
       <div className="Listing">
-        <Nav header="Results" />
+        <Nav header="- Results -" />
         {/* <div className="content-container"> */}
         {/* <div className='left-content-container'>
           </div> */}
@@ -31,9 +31,9 @@ class Listing extends Component {
                   </Link>
                   <h4>{e.location.display_address[0] + ' ' + e.location.display_address[1]} </h4>
                   <h4>Price range: {e.price} </h4>
-                  <h4> Yelp Rating: {e.rating} </h4>
+                  <h4> Yelp rating: {e.rating} </h4>
                 </div>
-                <div className="add-listing-btn" onClick={() => { this.props.addFavRestaurant(this.props.user.id, e.id) }}>Save Restaurant</div>
+                <div className="add-listing-btn" onClick={() => { this.props.addFavRestaurant(this.props.user.id, e.id) }}>Save</div>
               </div>
             )
           })}

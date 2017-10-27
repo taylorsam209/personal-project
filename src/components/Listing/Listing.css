@@ -46,11 +46,10 @@
 .restaurant-title {
   color: #201c1c;
   text-decoration: none;
-  font-size: 20px;
-  transition: margin-top 1s; }
+  transition: color 1s; }
 
 .restaurant-title:hover {
-  margin-top: 5px; }
+  color: #125bf8; }
 
 .add-listing-btn {
   margin: 5px 5px 0 0;
@@ -68,7 +67,3 @@
 
 .add-listing-btn:hover {
   background-color: #f3a09d; }
-
-@keyframes slideIn {
-  from { }
-  to { } }
