@@ -4,8 +4,8 @@
     text-align: center;
 }
 
-.content-container {
-    background-color: red;
+.profile-parent-container {
+    font-family: $font-family-elegant;
     width: 90%;
     height: 100vh;
     display: flex;
@@ -15,7 +15,7 @@
 .left-profile-container {
     height: 100vh;
     width:40%;
-    background-color: $color-medium; 
+
     .profile-pic{
         height: 230px;
         width: 230px;
@@ -25,19 +25,32 @@
 }
 
 .right-favorite-container {
-    max-height: 100%;
-    width: 60%;
+    width:60%;
+    height:100vh;
+}
+
+.favorite-title{
+    background-color:$color-medium;
+    font-size:2em;
+    color: white;
+    height: 8.25%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite-content {
+    height: 91.75%;
+    width: 100%;
     background-color: $color-dark;
+    border: solid 1px white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     overflow: scroll;
-    h1{
-        margin-bottom:20px;
-        background-color:$color-light;
-        height: 50px;
-    }
 }
+
 
 .listing-container {
     height: 200px;

@@ -24,12 +24,13 @@
 
 .listing-container {
   height: 200px;
-  width: 500px;
+  width: 550px;
   display: flex;
   background-color: white;
   border: 5px solid #505050;
   margin: 20px;
   align-content: center;
+  justify-content: space-around;
   font-family: Cabin; }
 
 .listing-photo {
@@ -44,6 +45,7 @@
   margin: 5px; }
 
 .restaurant-title {
+  padding-right: 5px;
   color: #201c1c;
   text-decoration: none;
   transition: color 1s; }
@@ -51,8 +53,8 @@
 .restaurant-title:hover {
   color: #125bf8; }
 
-.add-listing-btn {
-  margin: 5px 5px 0 0;
+.add-listing-button {
+  margin: 5px;
   cursor: pointer;
   height: 35px;
   width: 75px;
@@ -65,5 +67,5 @@
   justify-content: center;
   font-family: Lobster; }
 
-.add-listing-btn:hover {
+.add-listing-button:hover {
   background-color: #f3a09d; }

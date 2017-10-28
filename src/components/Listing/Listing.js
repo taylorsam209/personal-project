@@ -33,7 +33,7 @@ class Listing extends Component {
                   <h4>Price range: {e.price} </h4>
                   <h4> Yelp rating: {e.rating} </h4>
                 </div>
-                <div className="add-listing-btn" onClick={() => { this.props.addFavRestaurant(this.props.user.id, e.id) }}>Save</div>
+                <div className="add-listing-button" onClick={() => { this.props.addFavRestaurant(this.props.user.id, e.id) }}>Save</div>
               </div>
             )
           })}

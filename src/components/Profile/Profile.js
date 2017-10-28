@@ -23,7 +23,7 @@ class Profile extends Component {
       .then(response => {
         console.log(response.data)
         this.setState({
-          favListing:response.data
+          favListing: response.data
         })
       })
   }
@@ -43,31 +43,33 @@ class Profile extends Component {
     return (
       <div className="Profile">
         <Nav header="Profile" />
-        <div className="content-container">
+        <div className="profile-parent-container">
           <div className='left-profile-container'>
             <h1> Hello! </h1>
             <img className="profile-pic" src={img} alt="profile" />
             <h1>{user_name}</h1>
           </div>
           <div className="right-favorite-container">
-            <h1>Favorite Listings</h1>
-            {this.state.favListing.map((e, i, arr) => {
-              return (
-                <div key={i} className="listing-container">
-                  <img className="listing-photo" src={e.image_url} alt="restaurant" />
-                  <div className="listing-description-container">
-                    <Link to={`/restaurant/${e.id}`}><h3 onClick={() => {if (this.props.currentRestaurant.id !== e.id) { this.props.clearRestaurant() } this.props.addCurrentRestaurant(e.id) }}>{e.name}</h3> </Link>
-                    <h4>{e.location.display_address[0] + ' ' + e.location.display_address[1]} </h4>
-                    <p>Price: {e.price}
-                      Yelp Rating: {e.rating}
-                    </p>
-                    <div>
-                      {<button className="add-listing-btn" onClick={() => { this.deleteFavRestaurant(id, e.id) }} >Delete Restaurant</button>}
+            <div className="favorite-title">Favorite Listings</div>
+            <div className="favorite-content">
+              {this.state.favListing.map((e, i, arr) => {
+                return (
+                  <div key={i} className="listing-container">
+                    <img className="listing-photo" src={e.image_url} alt="restaurant" />
+                    <div className="listing-description-container">
+                      <Link to={`/restaurant/${e.id}`}><h3 onClick={() => { if (this.props.currentRestaurant.id !== e.id) { this.props.clearRestaurant() } this.props.addCurrentRestaurant(e.id) }}>{e.name}</h3> </Link>
+                      <h4>{e.location.display_address[0] + ' ' + e.location.display_address[1]} </h4>
+                      <p>Price: {e.price}
+                        Yelp Rating: {e.rating}
+                      </p>
+                      <div>
+                        {<button className="add-listing-btn" onClick={() => { this.deleteFavRestaurant(id, e.id) }} >Delete</button>}
+                      </div>
                     </div>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
