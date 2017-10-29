@@ -102,16 +102,13 @@ class Landing extends Component {
           <p className="about-description"> I like vegan products, I made this website for others who like vegan products. Yay, lets find vegan products. Yoosh! </p>
         </div>
         <div className="photo-container">
-          <div className="carousel-container">
+          <div className="landing-carousel-container">
             {this.state.pictures ? this.state.pictures.map((img, i) => {
               return <div className="image" key={i} style={this.imgStyle(img, i)}></div>
             }) : <div className="spinner"></div>}
           </div>
         </div>
         </div>
-
-
-
       </div>
     );
   }

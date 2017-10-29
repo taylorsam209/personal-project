@@ -22,7 +22,7 @@ class Listing extends Component {
         <div className="right-content-container">
           {this.props.listings.map((e, i, arr) => {
             return (
-              <div key={i} className="listing-container">
+              <div key={i} className="listings-container">
                 <img className="listing-photo" src={e.image_url} alt="none available" />
                 <div className="listing-description-container">
                   <Link style={{ textDecoration: "none" }} to={`/restaurant/${e.id}`}>

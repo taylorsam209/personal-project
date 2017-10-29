@@ -26,9 +26,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-delay:0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
-.listing-container {
+.listings-container {
     height: 200px;
     width: 500px;
     display: flex;
@@ -38,6 +45,13 @@
     align-content: center;
     justify-content: space-around;
     font-family: $font-family-elegant;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
 .listing-photo {
@@ -87,3 +101,37 @@ color: rgb(101, 150, 248);
 .add-listing-button:hover{
 background-color: rgb(243, 160, 157);
 }
+
+@-webkit-keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    }
+    100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    }
+    }
+    @keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    }
+    100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    }
+    } 
+
+    @-webkit-keyframes fadeIn {
+        0% {opacity: 0;}
+    100% {opacity: 1;}
+    }
+    @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    } 
