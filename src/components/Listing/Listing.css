@@ -24,7 +24,7 @@
 
 .listing-container {
   height: 200px;
-  width: 550px;
+  width: 500px;
   display: flex;
   background-color: white;
   border: 5px solid #505050;
@@ -48,10 +48,11 @@
   padding-right: 5px;
   color: #201c1c;
   text-decoration: none;
-  transition: color 1s; }
+  transition: color 1s;
+  color: #125bf8; }
 
 .restaurant-title:hover {
-  color: #125bf8; }
+  color: #6596f8; }
 
 .add-listing-button {
   margin: 5px;
@@ -65,7 +66,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Lobster; }
+  font-family: Lobster;
+  font-size: 1.25em; }
 
 .add-listing-button:hover {
   background-color: #f3a09d; }

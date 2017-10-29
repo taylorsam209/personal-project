@@ -16,6 +16,7 @@ class Profile extends Component {
     }
 
     this.deleteFavRestaurant.bind(this);
+    this.insertAddress.bind(this);
   }
 
   deleteFavRestaurant(id, restaurant) {
@@ -26,6 +27,13 @@ class Profile extends Component {
           favListing: response.data
         })
       })
+  }
+
+  insertAddress(e) {
+    if (e.location.display_address[2]) {
+      return e.location.display_address[0] + ' ' + e.location.display_address[1] + ' ' + e.location.display_address[2];
+    }
+    else return e.location.display_address[0] + ' ' + e.location.display_address[1];
   }
 
   componentDidMount() {
@@ -57,15 +65,18 @@ class Profile extends Component {
                   <div key={i} className="listing-container">
                     <img className="listing-photo" src={e.image_url} alt="restaurant" />
                     <div className="listing-description-container">
-                      <Link to={`/restaurant/${e.id}`}><h3 onClick={() => { if (this.props.currentRestaurant.id !== e.id) { this.props.clearRestaurant() } this.props.addCurrentRestaurant(e.id) }}>{e.name}</h3> </Link>
-                      <h4>{e.location.display_address[0] + ' ' + e.location.display_address[1]} </h4>
-                      <p>Price: {e.price}
-                        Yelp Rating: {e.rating}
-                      </p>
-                      <div>
-                        {<button className="add-listing-btn" onClick={() => { this.deleteFavRestaurant(id, e.id) }} >Delete</button>}
-                      </div>
+                      <Link style={{textDecoration:"none"}} to={`/restaurant/${e.id}`}><h3 className="restaurant-title" onClick={() => {
+                        if (this.props.currentRestaurant.id !== e.id) {
+                          this.props.clearRestaurant()
+                        }
+                        this.props.addCurrentRestaurant(e.id)
+                      }}>{e.name}</h3>
+                      </Link>
+                      <h4>{this.insertAddress(e)} </h4>
+                      <h4>Price range: {e.price} </h4>
+                      <h4> Yelp rating: {e.rating} </h4>
                     </div>
+                    <div className="delete-listing-btn" onClick={() => { this.deleteFavRestaurant(id, e.id) }} >Delete</div>
                   </div>
                 )
               })}

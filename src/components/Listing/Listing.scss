@@ -30,7 +30,7 @@
 
 .listing-container {
     height: 200px;
-    width: 550px;
+    width: 500px;
     display: flex;
     background-color: white;
     border:5px solid rgb(80, 80, 80);
@@ -60,10 +60,12 @@
     color: rgb(32, 28, 28);
     text-decoration: none;
     transition: color 1s;
+    color: rgb(18, 91, 248);
+    
 }
 
 .restaurant-title:hover {
-color: rgb(18, 91, 248);
+color: rgb(101, 150, 248);
 }
 
 .add-listing-button {
@@ -79,6 +81,7 @@ color: rgb(18, 91, 248);
     align-items: center;
     justify-content: center;
     font-family: $font-family-bold;
+    font-size: 1.25em;
 }
 
 .add-listing-button:hover{

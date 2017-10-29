@@ -7,14 +7,18 @@ import { addCurrentRestaurant, addFavRestaurant, clearRestaurant } from '../../d
 
 class Listing extends Component {
 
+  insertAddress(e) {
+    if (e.location.display_address[2]) {
+      return e.location.display_address[0] + ' ' + e.location.display_address[1] + ' ' + e.location.display_address[2];
+    }
+    else return e.location.display_address[0] + ' ' + e.location.display_address[1];
+  }
+
   render() {
     console.log(this.props.listings)
     return (
       <div className="Listing">
         <Nav header="- Results -" />
-        {/* <div className="content-container"> */}
-        {/* <div className='left-content-container'>
-          </div> */}
         <div className="right-content-container">
           {this.props.listings.map((e, i, arr) => {
             return (
@@ -29,7 +33,7 @@ class Listing extends Component {
                       this.props.addCurrentRestaurant(e.id)
                     }}>{e.name}</h2>
                   </Link>
-                  <h4>{e.location.display_address[0] + ' ' + e.location.display_address[1]} </h4>
+                  <h4>{this.insertAddress.bind(this)(e)} </h4>
                   <h4>Price range: {e.price} </h4>
                   <h4> Yelp rating: {e.rating} </h4>
                 </div>
