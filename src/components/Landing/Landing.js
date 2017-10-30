@@ -25,12 +25,10 @@ class Landing extends Component {
       direction: "forward"
     }
 
-    this.goBack = this.goBack.bind(this);
     this.goForward = this.goForward.bind(this);
   }
 
   componentDidMount() {
-    // this.props.clearListings() // resets Listing on redux state
     this.props.getCurrentUser();
     auto = setInterval(_ => { this.goForward() }, timer)
   }
@@ -40,19 +38,10 @@ class Landing extends Component {
     auto = setInterval(_ => { this.goForward() }, timer);
   }
 
-  goBack() {
-    this.resetInterval();
-    let { counter, direction,pictures } = this.state;
-    if (counter === 0) counter = pictures.length - 1;
-    else counter--;
-    this.setState({ counter, direction: 'back' })
-  }
-
   goForward() {
     if (!this.state.pictures) {
       return
     }
-    this.resetInterval();
     let { counter, direction, pictures } = this.state;
     if (counter >= pictures.length - 1) counter = 0;
     else counter++;
