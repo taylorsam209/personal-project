@@ -76,23 +76,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #114B5F; }
+  background-color: #114b5f; }
 
 .about-container {
   width: 50%;
   height: 40%;
   margin: auto;
-  background-color: #F3E9D2;
-  text-align: left; }
+  background-color: snow;
+  text-align: center; }
 
 .about-title {
   font-family: Lobster;
+  color: #0599fc;
   font-size: 2.5em;
-  font-weight: bold;
-  text-align: left; }
+  font-weight: bold; }
 
 .about-description {
   font-family: Cabin;
+  background-color: snow;
   font-size: 1.5em; }
 
 .photo-container {
@@ -121,14 +122,6 @@
   transition: left .4s;
   /* transition lets photos slide over smoothly */ }
 
-.spinner {
-  height: 100px;
-  width: 100px;
-  border: solid 2px black;
-  animation: loading 1s infinite;
-  position: absolute;
-  margin: auto; }
-
 @keyframes slideInDown {
   0% {
     transform: translateY(-100%);
@@ -141,9 +134,3 @@
     opacity: 0; }
   to {
     opacity: .80; } }
-
-@keyframes loading {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }

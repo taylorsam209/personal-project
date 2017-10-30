@@ -49,11 +49,9 @@
 .favorite-content {
   height: 91.75%;
   width: 100%;
-  background-color: #114B5F;
+  background-color: #114b5f;
   border: solid 1px white;
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   overflow: scroll;
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
@@ -68,7 +66,7 @@
   display: flex;
   background-color: white;
   border: 5px solid #505050;
-  margin: 20px;
+  margin: 20px auto 20px auto;
   align-content: center;
   font-family: Cabin;
   -webkit-animation-name: fadeIn;

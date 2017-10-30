@@ -95,18 +95,20 @@ justify-content: center;
     height: 40%;
     margin: auto;
     background-color: $color-light;
-    text-align: left;
+    text-align: center;
 }
 
 .about-title{
     font-family: $font-family-bold;
+    color: $color-header;
     font-size: 2.5em;
     font-weight: bold;
-    text-align: left;
+
 }
 
 .about-description{
     font-family: $font-family-elegant;
+    background-color: $color-light;
     font-size:1.5em;
 }
 
@@ -137,15 +139,6 @@ justify-content: center;
     transition: left .4s; /* transition lets photos slide over smoothly */
   }
 
-  .spinner{
-      height: 100px;
-      width: 100px;
-      border: solid 2px black;
-      animation: loading 1s infinite;
-      position: absolute;
-      margin: auto;
-  }
-
 @keyframes slideInDown {
    0% {
        transform: translateY(-100%);
@@ -161,7 +154,3 @@ justify-content: center;
     to   { opacity: .80; }
 }
 
-@keyframes loading {
-    from{transform: rotate(0deg); }
-    to{transform: rotate(360deg); }
-  }

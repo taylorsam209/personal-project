@@ -98,7 +98,7 @@ class Landing extends Component {
         </div>
         <div className="bottom-container">
         <div className="about-container">
-          <h1 className="about-title">Vegan and Vegetarian Resource</h1>
+          <h1 className="about-title">Plant based Dining</h1>
           <p className="about-description"> I like vegan products, I made this website for others who like vegan products. Yay, lets find vegan products. Yoosh! </p>
         </div>
         <div className="photo-container">

@@ -60,9 +60,9 @@
     width: 100%;
     background-color: $color-dark;
     border: solid 1px white;
-    display: flex;
+    // display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    // justify-content: center;
     overflow: scroll;
     -webkit-animation-name: fadeInUp;
     animation-name: fadeInUp;
@@ -78,7 +78,7 @@
     display: flex;
     background-color: white;
     border:5px solid rgb(80, 80, 80);
-    margin:20px;
+    margin:20px auto 20px auto;
     align-content: center;
     font-family: $font-family-elegant;
     -webkit-animation-name: fadeIn;

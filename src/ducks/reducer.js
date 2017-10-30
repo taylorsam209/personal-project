@@ -12,13 +12,13 @@ const FULFILLED = '_FULFILLED';
 const GET_LISTINGS = 'GET_LISTINGS';
 const ADD_FAV_RESTAURANT = 'ADD_FAV_RESTAURANT';
 const ADD_CURRENT_RESTAURANT = "ADD_CURRENT_RESTAURANT";
-const GET_USER= "GET_USER";
+const GET_USER = "GET_USER";
 const CLEAR_LISTINGS = "CLEAR_LISTINGS";
 const CLEAR_RESTAURANT = "CLEAR_RESTAURANT";
 
 export function clearListings() {
-    return{
-        type:CLEAR_LISTINGS,
+    return {
+        type: CLEAR_LISTINGS,
         payload: []
     }
 }
@@ -69,19 +69,21 @@ export function addFavRestaurant(userId, restaurant) {
         userId: userId,
         restaurantId: restaurant
     }
-    if(data.userId===undefined) {
-        swal("User not found.", "Please login to add favorite restaurants.","error")
+    if (data.userId === undefined) {
+        swal("User not found.", "Please login to add favorite restaurants.", "error")
         return {
             type: ADD_FAV_RESTAURANT
         }
-    } else 
-    axios.post('/api/addRestaurant', data).then(response => {
-        console.log(response.data)
-        if(response.data === "success") {
-        swal("Added to favorites!", "Go to profile to view your list!", "success")}
-    else {
-        swal("Attention", "Business already exists in your profile.", "warning")
-    }}).catch(err => {
+    } else
+        axios.post('/api/addRestaurant', data).then(response => {
+            console.log(response.data)
+            if (response.data === "success") {
+                swal("Added to favorites!", "Go to profile to view your list!", "success")
+            }
+            else {
+                swal("Attention", "Business already exists in your profile.", "warning")
+            }
+        }).catch(err => {
             console.log("Create user error", err)
         })
     return {
@@ -94,18 +96,19 @@ export default function reducer(state = initialState, action) {
         case GET_LISTINGS + FULFILLED:
             return Object.assign({}, state, { listings: action.payload })
         case ADD_CURRENT_RESTAURANT + FULFILLED:
-            return Object.assign({}, state, { currentRestaurant: action.payload })
+            return Object.assign({}, state, { currentRestaurant: action.payload }) 
         case GET_USER + FULFILLED:
             return Object.assign({}, state, { user: action.payload })
         case ADD_FAV_RESTAURANT + FULFILLED:
             return Object.assign({}, state)
-            case CLEAR_LISTINGS:
-            return Object.assign({}, state, {listings: action.payload})
-            case CLEAR_RESTAURANT:
-            return Object.assign({}, state, {currentRestaurant:action.payload})
+        case CLEAR_LISTINGS:
+            return Object.assign({}, state, { listings: action.payload })
+        case CLEAR_RESTAURANT:
+            return Object.assign({}, state, { currentRestaurant: action.payload })
 
         default:
-            return state;
+            return state;            console.log("whole", this.state.currentRestaurant);
+            
 
     }
 }

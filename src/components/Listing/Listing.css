@@ -11,12 +11,12 @@
 .left-content-container {
   height: 100%;
   width: 40%;
-  background-color: #114B5F; }
+  background-color: #114b5f; }
 
 .right-content-container {
   min-height: 100%;
   width: 90%;
-  background-color: #114B5F;
+  background-color: #114b5f;
   margin: 20px auto 20px auto;
   display: flex;
   flex-wrap: wrap;
@@ -25,7 +25,7 @@
   animation-name: fadeIn;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
-  animation-delay: 0.5s;
+  animation-delay: 0.75s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
 

@@ -25,13 +25,13 @@ class Listing extends Component {
               <div key={i} className="listings-container">
                 <img className="listing-photo" src={e.image_url} alt="none available" />
                 <div className="listing-description-container">
-                  <Link style={{ textDecoration: "none" }} to={`/restaurant/${e.id}`}>
-                    <h2 className='restaurant-title' onClick={() => {
+                  <Link onClick={() => {
                       if (this.props.currentRestaurant.id !== e.id) {
                         this.props.clearRestaurant()
                       }
                       this.props.addCurrentRestaurant(e.id)
-                    }}>{e.name}</h2>
+                    }}style={{ textDecoration: "none" }} to={`/restaurant/${e.id}`}>
+                    <h2 className='restaurant-title' >{e.name}</h2>
                   </Link>
                   <h4>{this.insertAddress.bind(this)(e)} </h4>
                   <h4>Price range: {e.price} </h4>
