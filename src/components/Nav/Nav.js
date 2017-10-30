@@ -27,7 +27,7 @@ class Nav extends Component {
                 <div className="header-parent">
                     <div className="header-child-left">
                         <Link to="/" className="logo-container" >
-                            <img className="logo" src={logo} alt="globe" />Vegan Finder
+                            <img className="logo" src={logo} alt="globe" />Plant Munchies
                             </Link>
                     </div>
                     <div className="header-child-mid">

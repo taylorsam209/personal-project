@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { getListings, getCurrentUser, clearListings } from '../../ducks/reducer';
 import { Link } from 'react-router-dom';
 import hotpot from '../../assets/hotpot.mp4';
+import cucumber from '../../assets/The_Cucumber.mp4'
+import veggiestand from '../../assets/Veggie-Stand.mp4'
 import vegan2 from "../../assets/vegan2.jpg";
 import freshveggie from "../../assets/fresh-veggies.jpeg";
 import mexicana from "../../assets/mexicana.png";
@@ -82,13 +84,13 @@ class Landing extends Component {
             </div>
           </div>
           <video autoPlay loop>
-            <source src={hotpot} type="video/mp4" />.
+            <source src={veggiestand} type="video/mp4" />.
              </video>
         </div>
         <div className="bottom-container">
         <div className="about-container">
           <h1 className="about-title">Plant based Dining</h1>
-          <p className="about-description"> I like vegan products, I made this website for others who like vegan products. Yay, lets find vegan products. Yoosh! </p>
+          <p className="about-description"> Search around your city to find vegan and vegetarian friendly meals as well as resources. This includes restaurants, grocery stores, farmers market, and more! </p>
         </div>
         <div className="photo-container">
           <div className="landing-carousel-container">

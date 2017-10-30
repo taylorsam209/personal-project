@@ -105,10 +105,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { listings: action.payload })
         case CLEAR_RESTAURANT:
             return Object.assign({}, state, { currentRestaurant: action.payload })
-
         default:
-            return state;            console.log("whole", this.state.currentRestaurant);
-            
-
+            return state;          
     }
 }
