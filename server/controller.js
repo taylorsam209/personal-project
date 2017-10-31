@@ -47,6 +47,7 @@ module.exports = {
                     let yelpId = yelpIdList[i].restaurant_id;
                     GetMyResourceData(yelpId);
                 }
+                
                 function GetMyResourceData(yelpId) {
                     axios.get(`https://api.yelp.com/v3/businesses/${yelpId}`,
                         { headers: { "Authorization": `Bearer ${process.env.YELP_ACCESS_TOKEN}` } })
