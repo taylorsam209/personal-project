@@ -12,6 +12,8 @@ const express = require('express'),
 const port = 3010;
 const app = express();
 app.use(bodyParser.json());
+app.use( express.static( `${__dirname}/../build` ) );
+
 app.use(cors());
 app.use(session({
     secret: process.env.SECRET,
@@ -48,8 +50,8 @@ passport.use(new Auth0Strategy({
 
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/',
-    failureRedirect: '/auth'
+    successRedirect: process.env.SUCCESS_REDIRECT,
+    failureRedirect: process.env.FAILURE_REDIRECT
 }));
 
 app.get('/auth/me', (req, res) => {
@@ -61,7 +63,7 @@ app.get('/auth/me', (req, res) => {
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(302,'http://localhost:3000/#/')
+    res.redirect(302,process.env.SUCCESS_REDIRECT)
 })
 
 passport.serializeUser(function (id, done) {
@@ -80,5 +82,10 @@ app.get('/api/getRestaurant/:id', controller.readRestaurant) //get single restau
 app.post('/api/addRestaurant', controller.addRestaurant)
 app.get('/api/getfavlisting/:id', controller.readFavListing)
 app.delete('/api/deletefavrestaurant', controller.deleteFavRestaurant)
+
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 app.listen(port, () => console.log(`Running on port ${port}`))

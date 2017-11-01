@@ -7,10 +7,6 @@ import 'font-awesome/css/font-awesome.min.css';
 import Carousel from "../Carousel/Carousel";
 import Map from "../Map/Map"
 
-
-let auto;
-const timer = 4000;
-
 class Restaurant extends Component {
  
   render() {

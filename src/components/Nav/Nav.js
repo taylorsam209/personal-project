@@ -14,7 +14,7 @@ class Nav extends Component {
             return (
                 <div className="logged-in-container">
                     <Link style={{ textDecoration: "none" }} to="/profile"><div className="btn">Profile</div></Link>
-                    <a style={{ textDecoration: "none" }} href={'http://localhost:3010/auth/logout'}><div className="btn">Logout</div></a>
+                    <a style={{ textDecoration: "none" }} href={process.env.REACT_APP_LOGOUT}><div className="btn">Logout</div></a>
                 </div>
             )
     }

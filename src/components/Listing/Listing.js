@@ -16,6 +16,7 @@ class Listing extends Component {
 
   render() {
     console.log(this.props.listings)
+    
     return (
       <div className="Listing">
         <Nav header="- Results -" />

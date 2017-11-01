@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
-import { compose, withProps, withStateHandlers } from "recompose";
+import { compose, withStateHandlers } from "recompose";
 import { connect } from "react-redux";
 
 
@@ -14,7 +14,7 @@ class Map extends Component {
 
     render() {
 
-        const { id, name, price, rating, url, display_phone, photos, review_count, coordinates, location } = this.props.currentRestaurant;
+        const { name, coordinates, location } = this.props.currentRestaurant;
         console.log("coordinates", this.props.currentRestaurant.coordinates);
         console.log("whole", this.props.currentRestaurant);
         let latitude = 0;
@@ -65,7 +65,7 @@ class Map extends Component {
         return (
             <div>
                 <MapWithAMakredInfoWindow
-                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
+                   googleMapURL={process.env.REACT_APP_GOOGLE_MAP_URL}
                     loadingElement={<div style={{ height: `100%` }} />}
                     containerElement={<div style={{ height: `400px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
