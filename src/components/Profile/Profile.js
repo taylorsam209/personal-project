@@ -37,7 +37,7 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3010/api/getfavlisting/${this.props.user.id}`)
+    axios.get(`/api/getfavlisting/${this.props.user.id}`)
       .then(response => {
         this.setState({
           favListing: response.data
