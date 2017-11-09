@@ -33,7 +33,6 @@ class Map extends Component {
             address3= location.display_address[2];
         }
 
-
         const MapWithAMakredInfoWindow = compose(
             withStateHandlers(() => ({
                 isOpen: false,
@@ -59,7 +58,8 @@ class Map extends Component {
                             <p style={{fontSize:"15px"}}> {address1} {address2} {address3}</p>
                         </div>
                     </InfoWindow>}
-                </Marker>
+                </Marker> 
+
             </GoogleMap>
             );
         return (
