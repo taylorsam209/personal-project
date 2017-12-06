@@ -1,6 +1,6 @@
 Plant Munchies - DevMountain personal project
 
-Link - http://198.199.103.230/#/
+Link - http://veganeats.life/
 
 Tech Used: ES6 Javascript, React JS, React-redux, React-router, SASS, Yelp Fusion API, React-google-maps, Nodes JS with Express, PostGresSQL with Massive, Auth0
 
