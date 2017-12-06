@@ -1,4 +1,4 @@
-Plant Munchies - DevMountain personal project
+Vegan Eats - DevMountain personal project
 
 Link - http://veganeats.life/
 
