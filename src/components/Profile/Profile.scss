@@ -23,10 +23,9 @@
         border-radius:200px;
         -webkit-animation-name: bounceIn;
         animation-name: bounceIn;
-        -webkit-animation-duration: .75s;
-        animation-duration: .75s;
         -webkit-animation-duration: 1s;
         animation-duration: 1s;
+        animation-delay: 0.5s;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
     }
@@ -51,6 +50,7 @@
     animation-name: fadeInRight;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
+    animation-delay:0.5s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -68,6 +68,7 @@
     animation-name: fadeInUp;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
+    animation-delay: 0.5s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }

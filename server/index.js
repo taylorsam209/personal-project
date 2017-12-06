@@ -35,7 +35,9 @@ passport.use(new Auth0Strategy({
     callbackURL: process.env.CALLBACK_URL
 }, function (accessToken, refreshToken, extraParams, profile, done) {
     const db = app.get('db');
+    console.log(profile)
     db.find_user([profile.identities[0].user_id]).then(user => {
+        // console.log(user)
         if (user[0]) {
             return done(null, user[0].id)
         } else {

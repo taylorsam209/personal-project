@@ -15,7 +15,13 @@
 .video-container {
   width: 100%;
   margin: auto;
-  position: relative; }
+  position: relative;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
   .video-container video {
     z-index: -1;
     width: 100%; }
@@ -31,6 +37,7 @@
   justify-content: center;
   animation-name: slideInDown;
   animation-duration: 1s;
+  animation-delay: 2s;
   animation-fill-mode: both; }
 
 .input-bar {
@@ -83,6 +90,7 @@
   height: 40%;
   margin: auto;
   background-color: snow;
+  border-radius: 5px;
   text-align: center; }
 
 .about-title {
@@ -124,9 +132,11 @@
 
 @keyframes slideInDown {
   0% {
+    opacity: 0;
     transform: translateY(-100%);
     visibility: visible; }
   100% {
+    opacity: 1;
     transform: translateY(0); } }
 
 @keyframes fadein {
