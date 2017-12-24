@@ -7,7 +7,7 @@ import { addCurrentRestaurant, addFavRestaurant, clearRestaurant } from '../../d
 
 class Listing extends Component {
 
-  insertAddress(e) {
+  handleBusinessAddress(e) {
     if (e.location.display_address[2]) {
       return e.location.display_address[0] + ' ' + e.location.display_address[1] + ' ' + e.location.display_address[2];
     }
@@ -20,6 +20,7 @@ class Listing extends Component {
     return (
       <div className="Listing">
         <Nav header="- Results -" />
+        {this.props.listings.length ?
         <div className="right-content-container">
           {this.props.listings.map((e, i, arr) => {
             return (
@@ -34,7 +35,7 @@ class Listing extends Component {
                     }}style={{ textDecoration: "none" }} to={`/restaurant/${e.id}`}>
                     <h2 className='restaurant-title' >{e.name}</h2>
                   </Link>
-                  <h4>{this.insertAddress.bind(this)(e)} </h4>
+                  <h4>{this.handleBusinessAddress.bind(this)(e)} </h4>
                   <h4>Price range: {e.price} </h4>
                   <h4> Yelp rating: {e.rating} </h4>
                 </div>
@@ -42,9 +43,7 @@ class Listing extends Component {
               </div>
             )
           })}
-
-        </div>
-        {/* </div> */}
+        </div> : <h1> Gathering results... </h1> }    
       </div>
     );
   }

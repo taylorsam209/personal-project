@@ -1,8 +1,8 @@
 @import "../../variables";
 
 .Landing {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 .video-overlay {
@@ -16,21 +16,22 @@
 }
 
 .video-container { 
-    width: 100%;
     margin: auto;
     position: relative;
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
     -webkit-animation-duration: 1s;
     animation-duration: 2s;
-    // animation-delay: 1.s;
+    animation-delay: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both; 
+    width: 100%;
     video {
-    z-index: -1;
-    width: 100%
+        width: 100%;
+        z-index: -1;
     }
 }
+
 .search-container{
     width: 70%;
     margin: auto;
@@ -56,7 +57,6 @@
     opacity: 0.85;
 }
 
-
 .submit-btn {
     height: 35px;
     width: 75px;
@@ -78,20 +78,21 @@
 
 .description-container{
     margin: auto;
-font-family: $font-family-bold;
-font-size: 30px;
-font-weight: bold;
-color: rgb(255, 255, 255);
-width: 75%;
-height: 50%;
-opacity: 0.80;
-animation: fadein 5s;
-display: flex;
-align-items: center;
-justify-content: center;
+    font-family: $font-family-bold;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    width: 75%;
+    height: 50%;
+    opacity: 0.80;
+    animation: fadein 5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bottom-container{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,7 +105,6 @@ justify-content: center;
     margin: auto;
     background-color: $color-light;
     border-radius: 5px;
-    text-align: center;
 }
 
 .about-title{
@@ -119,6 +119,7 @@ justify-content: center;
     font-family: $font-family-elegant;
     background-color: $color-light;
     font-size:1.5em;
+    color: rgb(39, 38, 38);
 }
 
 .photo-container{
@@ -132,17 +133,12 @@ justify-content: center;
     width: 700px;
     overflow: hidden;
     position: relative;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
     background-color: gray; 
 }
 
 .image {
-    height: 100%;
     width: 100%;
+    height: 100%;
     position: absolute;
     background-size: cover; 
     transition: left .4s; /* transition lets photos slide over smoothly */
@@ -165,10 +161,28 @@ justify-content: center;
     to   { opacity: .80; }
 }
 
-// @media (max-width: 1500px){
-//     .landing-carousel-container{
-//         width: 500px;
-//         height: 350px;
-//         display: none;
-//     }
-// }
+/*Mobile Views*/
+@media (max-width: 480px) {
+    .input-bar {
+        font-size: 1em;
+    }
+    .description-container{
+        display: none;
+    }
+
+}
+
+/*Tablet Views */
+@media (max-width: 768px){
+    .landing-carousel-container{
+        display: none;
+    }
+    .bottom-container{
+        height: 500px;
+        background-color: $color-dark;
+    }
+    .about-container{
+        width: 100%;
+        border-radius: 0px;
+    }
+}

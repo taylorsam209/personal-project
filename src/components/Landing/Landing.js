@@ -4,8 +4,6 @@ import "./Landing.css";
 import { connect } from 'react-redux';
 import { getListings, getCurrentUser, clearListings } from '../../ducks/reducer';
 import { Link } from 'react-router-dom';
-import hotpot from '../../assets/hotpot.mp4';
-import cucumber from '../../assets/The_Cucumber.mp4'
 import veggiestand from '../../assets/Veggie-Stand.mp4'
 import vegan2 from "../../assets/vegan2.jpg";
 import freshveggie from "../../assets/fresh-veggies.jpeg";
@@ -28,6 +26,7 @@ class Landing extends Component {
     }
 
     this.goForward = this.goForward.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -68,6 +67,12 @@ class Landing extends Component {
     return { backgroundImage, left, zIndex };
   };
 
+  handleChange(e) {
+    this.setState({
+      input: e.target.value
+    })
+  }
+
   render() {
     const { getListings } = this.props;
     return (
@@ -76,8 +81,11 @@ class Landing extends Component {
         <div className="video-container">
           <div className="video-overlay">
             <div className="search-container">
-              <input className="input-bar" type="text" value={this.state.input} onChange={(e) => { this.setState({ input: e.target.value }) }} placeholder="Find Vegan & Vegetarian near..." />
-              <Link to='/listing' className="submit-btn" onClick={() => { if (this.props.listings !== getListings(this.state.input)) { this.props.clearListings() } getListings(this.state.input) }}>Submit</Link>
+              <input className="input-bar" type="text" value={this.state.input} 
+              onChange={(e) => this.handleChange(e)} placeholder="Find Vegan & Vegetarian near..." />
+              {/* <button type='submit' onSubmit={}/> */}
+              <Link to='/listing' className="submit-btn" type='submit'
+              onClick={() => { if (this.props.listings !== getListings(this.state.input)) { this.props.clearListings() } getListings(this.state.input) }}>Submit</Link>
             </div>
             <div className="description-container">
               <h1>Desire. Explore. Discover. Nourish.</h1>

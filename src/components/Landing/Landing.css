@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster|Cabin");
 .Landing {
-  width: 100%;
-  height: 100%; }
+  width: 100vw;
+  height: 100vh; }
 
 .video-overlay {
   width: 100%;
@@ -13,18 +13,19 @@
   z-index: 1; }
 
 .video-container {
-  width: 100%;
   margin: auto;
   position: relative;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
   -webkit-animation-duration: 1s;
   animation-duration: 2s;
+  animation-delay: 1s;
   -webkit-animation-fill-mode: both;
-  animation-fill-mode: both; }
+  animation-fill-mode: both;
+  width: 100%; }
   .video-container video {
-    z-index: -1;
-    width: 100%; }
+    width: 100%;
+    z-index: -1; }
 
 .search-container {
   width: 70%;
@@ -80,6 +81,7 @@
   justify-content: center; }
 
 .bottom-container {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,8 +92,7 @@
   height: 40%;
   margin: auto;
   background-color: snow;
-  border-radius: 5px;
-  text-align: center; }
+  border-radius: 5px; }
 
 .about-title {
   font-family: Lobster;
@@ -102,7 +103,8 @@
 .about-description {
   font-family: Cabin;
   background-color: snow;
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  color: #272626; }
 
 .photo-container {
   display: flex;
@@ -115,16 +117,11 @@
   width: 700px;
   overflow: hidden;
   position: relative;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
   background-color: gray; }
 
 .image {
-  height: 100%;
   width: 100%;
+  height: 100%;
   position: absolute;
   background-size: cover;
   transition: left .4s;
@@ -144,3 +141,21 @@
     opacity: 0; }
   to {
     opacity: .80; } }
+
+/*Mobile Views*/
+@media (max-width: 480px) {
+  .input-bar {
+    font-size: 1em; }
+  .description-container {
+    display: none; } }
+
+/*Tablet Views */
+@media (max-width: 768px) {
+  .landing-carousel-container {
+    display: none; }
+  .bottom-container {
+    height: 500px;
+    background-color: #114b5f; }
+  .about-container {
+    width: 100%;
+    border-radius: 0px; } }
