@@ -117,3 +117,13 @@
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+@media (max-width: 480px) {
+  .right-content-container {
+    width: 100%; }
+  .listing-photo {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    height: 150px;
+    width: 160px !important;
+    margin: 10px; } }

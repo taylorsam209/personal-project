@@ -143,19 +143,16 @@
     opacity: .80; } }
 
 /*Mobile Views*/
+/*Tablet Views */
+@media (max-width: 768px) {
+  .landing-carousel-container {
+    display: none; }
+  .about-container {
+    width: 100%;
+    border-radius: 0px; } }
+
 @media (max-width: 480px) {
   .input-bar {
     font-size: 1em; }
   .description-container {
     display: none; } }
-
-/*Tablet Views */
-@media (max-width: 768px) {
-  .landing-carousel-container {
-    display: none; }
-  .bottom-container {
-    height: 500px;
-    background-color: #114b5f; }
-  .about-container {
-    width: 100%;
-    border-radius: 0px; } }

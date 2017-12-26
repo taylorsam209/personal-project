@@ -63,7 +63,7 @@ class Profile extends Component {
               {this.state.favListing.map((e, i, arr) => {
                 return (
                   <div key={i} className="listing-container">
-                    <img className="listing-photo" src={e.image_url} alt="restaurant" />
+                    <img className="profile-listing-photo" src={e.image_url} alt="restaurant" />
                     <div className="listing-description-container">
                       <Link style={{textDecoration:"none"}} to={`/restaurant/${e.id}`}><h3 className="restaurant-title" onClick={() => {
                         if (this.props.currentRestaurant.id !== e.id) {

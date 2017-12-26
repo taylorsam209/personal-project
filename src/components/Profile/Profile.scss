@@ -91,7 +91,7 @@
 }
 
 
-.listing-photo {
+.profile-listing-photo {
     height: 160px;
     width: 35%;
     margin: 20px;
@@ -261,3 +261,26 @@ transform: scale3d(1, 1, 1);
     transform: none;
     }
     } 
+
+    @media (max-width: 768px){
+        .profile-parent-container {
+            display: inline;
+        }
+        .left-profile-container {
+            margin: auto;
+            height: 30%;
+        }
+        .right-favorite-container{
+            margin: auto;
+            width:85%;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .right-favorite-container{
+            width:95%;
+        }
+        .listing-container{
+            width: 95%;
+        }
+    }

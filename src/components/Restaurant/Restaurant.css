@@ -8,8 +8,7 @@
 .photo-container {
   display: flex;
   flex-direction: row;
-  margin: auto;
-  margin-top: 50px; }
+  margin: auto; }
 
 .carousel-container {
   height: 400px;
@@ -147,3 +146,18 @@
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+/*Tablet Views */
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 200px;
+    width: 350px; } }
+
+@media (max-width: 480px) {
+  .restaurant-description-container {
+    font-size: .75em; }
+  .carousel-btn {
+    display: none; }
+  .carousel-container {
+    height: 300px;
+    width: 300px; } }

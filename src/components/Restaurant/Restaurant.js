@@ -15,11 +15,13 @@ class Restaurant extends Component {
 
     return (
       <div className="Restaurant">
-        <Nav header={name} />
+        <Nav header='Details' />
+          <h1>{name}</h1>
         <Carousel />
         <div className="restaurant-description-container">
           <h1>Price range: {price}</h1>
-          <h1>Yelp rating based on {review_count} reviews: {rating}</h1>
+          <h1>Review Count: {review_count}</h1>
+          <h1>Rating: {rating}</h1>
           <h1>Phone: {display_phone}</h1>
           <a target="_blank" href={url} style={{ textDecoration: "none" }}><div className='yelp-btn'><i className="fa fa-yelp fa-fw" aria-hidden="true"></i>
             Yelp Page!</div></a>
