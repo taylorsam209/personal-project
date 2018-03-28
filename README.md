@@ -17,7 +17,39 @@ Link http://veganeats.life
 <li>Passport-Auth0</li>
 <li>PostgreSQL</li>
 <li>RESTful APIs</li>
+<li>Yelp Fusion API</li>
+<li>Google Maps Api</li>
 
+## Views
+<br><br>
 <p align="center">
-    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/veganeats.PNG" width="700">
+    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/veganeats.PNG" width="600">
 </p> 
+<p align="center">
+    Landing view with search field.
+</p> 
+
+<br><br>
+<p align="center">
+    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/Listing.PNG" width="600">
+</p> 
+<p align="center">
+    Search results view of restaurant listings by location.
+</p> 
+
+<br><br>
+<p align="center">
+    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/Details.PNG" width="600">
+</p> 
+<p align="center">
+    Detail view of selected restaurant.
+</p> 
+
+<br><br>
+<p align="center">
+    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/Profile.PNG" width="600">
+</p> 
+<p align="center">
+    Profile view with favorite restaurants saved to profile.
+</p> 
+
