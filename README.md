@@ -23,7 +23,7 @@ Link http://veganeats.life
 ## Views
 <br><br>
 <p align="center">
-    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/veganeats.PNG" width="600">
+    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/veganeats.PNG" width="800">
 </p> 
 <p align="center">
     Landing view with search field.
@@ -31,7 +31,7 @@ Link http://veganeats.life
 
 <br><br>
 <p align="center">
-    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/Listing.PNG" width="600">
+    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/Listing.PNG" width="800">
 </p> 
 <p align="center">
     Search results view of restaurant listings by location.
@@ -39,7 +39,7 @@ Link http://veganeats.life
 
 <br><br>
 <p align="center">
-    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/Details.PNG" width="600">
+    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/Details.PNG" width="800">
 </p> 
 <p align="center">
     Detail view of selected restaurant.
@@ -47,7 +47,7 @@ Link http://veganeats.life
 
 <br><br>
 <p align="center">
-    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/Profile.PNG" width="600">
+    <img src="https://github.com/taylorsam209/personal-project/blob/master/src/assets/Profile.PNG" width="800">
 </p> 
 <p align="center">
     Profile view with favorite restaurants saved to profile.
