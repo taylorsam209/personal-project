@@ -81,11 +81,16 @@ class Landing extends Component {
         <div className="video-container">
           <div className="video-overlay">
             <div className="search-container">
-              <input className="input-bar" type="text" value={this.state.input} 
-              onChange={(e) => this.handleChange(e)} placeholder="Find Vegan & Vegetarian near..." />
+              <input className="input-bar" type="text" value={this.state.input}
+                onChange={(e) => this.handleChange(e)} placeholder="Find Vegan & Vegetarian near..." required />
               {/* <button type='submit' onSubmit={}/> */}
-              <Link to='/listing' className="submit-btn" type='submit'
-              onClick={() => { if (this.props.listings !== getListings(this.state.input)) { this.props.clearListings() } getListings(this.state.input) }}>Submit</Link>
+              <Link to='/listing' style={{textDecoration: 'none'}}>
+                <button type='submit' className="submit-btn" onClick={() => {
+                    if (this.props.listings !== getListings(this.state.input)) {
+                      this.props.clearListings()
+                    }
+                    getListings(this.state.input)
+                  }}>Submit</button></Link>
             </div>
             <div className="description-container">
               <h1>Desire. Explore. Discover. Nourish.</h1>
@@ -96,17 +101,19 @@ class Landing extends Component {
              </video>
         </div>
         <div className="bottom-container">
-        <div className="about-container">
-          <h1 className="about-title">Plant based Dining</h1>
-          <p className="about-description"> Search around your city to find vegan and vegetarian friendly meals as well as resources. This includes restaurants, grocery stores, farmers market, and more! </p>
-        </div>
-        <div className="photo-container">
-          <div className="landing-carousel-container">
-            {this.state.pictures ? this.state.pictures.map((img, i) => {
-              return <div className="image" key={i} style={this.imgStyle(img, i)}></div>
-            }) : <div className="spinner"></div>}
+          <div className="about-container">
+            <h1 className="about-title">Plant based Dining</h1>
+            <p className="about-description">
+              Search around your city to find vegan and vegetarian friendly meals as well as resources.
+            This includes restaurants, grocery stores, farmers market, and more! </p>
           </div>
-        </div>
+          <div className="photo-container">
+            <div className="landing-carousel-container">
+              {this.state.pictures ? this.state.pictures.map((img, i) => {
+                return <div className="image" key={i} style={this.imgStyle(img, i)}></div>
+              }) : <div className="spinner"></div>}
+            </div>
+          </div>
         </div>
       </div>
     );

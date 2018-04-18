@@ -84,6 +84,7 @@ app.get('/api/getRestaurant/:id', controller.readRestaurant) //get single restau
 app.post('/api/addRestaurant', controller.addRestaurant)
 app.get('/api/getfavlisting/:id', controller.readFavListing)
 app.delete('/api/deletefavrestaurant', controller.deleteFavRestaurant)
+app.get('/api/reviews/:id', controller.getReviews)
 
 
 const path = require('path')

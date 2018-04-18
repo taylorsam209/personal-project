@@ -54,13 +54,17 @@
     animation-fill-mode: both;
 }
 
-.listing-photo {
+.photo-container {
     height: 160px;
     width: 35%;
     margin: 20px;
     object-fit: cover;
     overflow: hidden;
-    background-color: cornflowerblue;
+}
+
+.listing-photo {
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .listing-description-container {
