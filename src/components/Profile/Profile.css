@@ -49,7 +49,7 @@
 .favorite-content {
   height: 91.75%;
   width: 100%;
-  background-color: #114b5f;
+  background-color: #1660b4;
   border: solid 1px white;
   flex-wrap: wrap;
   overflow: scroll;
@@ -77,13 +77,18 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
 
-.profile-listing-photo {
+.profile-listing-photo-container {
+  text-decoration: none;
   height: 160px;
-  width: 35%;
-  margin: 20px;
+  width: 50%;
+  margin: 20px; }
+
+.profile-listing-photo {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   overflow: hidden;
-  background-color: cornflowerblue; }
+  border: 1px solid gray; }
 
 .listing-description-container h4 {
   margin: 5px; }

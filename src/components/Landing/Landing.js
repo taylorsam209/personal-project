@@ -73,6 +73,15 @@ class Landing extends Component {
     })
   }
 
+  handleListing() {
+    const { getListings } = this.props;
+    if (this.props.listings !== getListings(this.state.input)) {
+      this.props.clearListings()
+    }
+    getListings(this.state.input)
+  }
+
+
   render() {
     const { getListings } = this.props;
     return (
@@ -83,14 +92,10 @@ class Landing extends Component {
             <div className="search-container">
               <input className="input-bar" type="text" value={this.state.input}
                 onChange={(e) => this.handleChange(e)} placeholder="Enter City, State..." required />
-              {/* <button type='submit' onSubmit={}/> */}
-              <Link to='/listing' style={{textDecoration: 'none'}}>
-                <button type='submit' className="submit-btn" onClick={() => {
-                    if (this.props.listings !== getListings(this.state.input)) {
-                      this.props.clearListings()
-                    }
-                    getListings(this.state.input)
-                  }}>Submit</button></Link>
+              <Link to='/listing' style={{ textDecoration: 'none' }}>
+                <button type='submit' className="submit-btn"
+                  onClick={() => this.handleListing()}>Submit</button>
+              </Link>
             </div>
             <div className="description-container">
               <h1>Desire. Explore. Discover. Nourish.</h1>
@@ -98,7 +103,7 @@ class Landing extends Component {
           </div>
           <video autoPlay loop>
             <source src={veggiestand} type="video/mp4" />.
-             </video>
+          </video>
         </div>
         <div className="bottom-container">
           <div className="about-container">

@@ -13,7 +13,7 @@
   justify-content: space-between;
   align-items: center; }
   .header-parent .header-child-left {
-    width: 40vw;
+    width: 40%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@
       height: 50px;
       width: 50px; }
   .header-parent .header-child-mid {
-    width: 20vw;
+    width: 20%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -42,7 +42,7 @@
       font-weight: bold;
       font-size: 30px; }
   .header-parent .header-child-right {
-    width: 40vw;
+    width: 40%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -78,5 +78,5 @@
 
 @media (max-width: 750px) {
   .header-child-left {
-    width: 40vw;
+    width: 40%;
     height: 100%; } }

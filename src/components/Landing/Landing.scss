@@ -5,18 +5,9 @@
     height: 100%;
 }
 
-.video-overlay {
-    width: 100%;
-    height:100%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    padding: 5px 5px; 
-    z-index: 1;
-}
-
 .video-container { 
-    margin: auto;
+    width: 100%;
+    height: 70%;
     position: relative;
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
@@ -25,12 +16,23 @@
     animation-delay: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both; 
-    width: 100%;
+    .video-overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+    } 
     video {
         width: 100%;
+        height: 100%;
         z-index: -1;
     }
 }
+
+
+
 
 .search-container{
     width: 70%;
@@ -92,6 +94,7 @@
 }
 
 .bottom-container{
+    margin-top: -4px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -125,8 +128,8 @@
 .photo-container{
     display: flex;
     flex-direction: row;
-    margin: auto;
-    margin-top: 50px;
+    margin: 0px;
+    // margin-top: 50px;
 }
 .landing-carousel-container {
     height: 400px;

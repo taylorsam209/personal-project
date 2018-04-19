@@ -90,14 +90,19 @@
     animation-fill-mode: both;
 }
 
+.profile-listing-photo-container{
+    text-decoration: none;
+    height: 160px;
+    width: 50%;
+    margin: 20px;
+}
 
 .profile-listing-photo {
-    height: 160px;
-    width: 35%;
-    margin: 20px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
     overflow: hidden;
-    background-color: cornflowerblue;
+    border: 1px solid gray;
 }
 
 .listing-description-container {

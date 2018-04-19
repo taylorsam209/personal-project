@@ -4,7 +4,7 @@ import Nav from '../Nav/Nav';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { addCurrentRestaurant, clearRestaurant } from "../../ducks/reducer";
+import { addCurrentRestaurant, clearRestaurant, getReviews, clearReviews } from "../../ducks/reducer";
 
 
 class Profile extends Component {
@@ -17,6 +17,15 @@ class Profile extends Component {
 
     this.deleteFavRestaurant.bind(this);
     this.insertAddress.bind(this);
+  }
+
+  componentDidMount() {
+    axios.get(`/api/getfavlisting/${this.props.user.id}`)
+      .then(response => {
+        this.setState({
+          favListing: response.data
+        })
+      });
   }
 
   deleteFavRestaurant(id, restaurant) {
@@ -36,14 +45,15 @@ class Profile extends Component {
     else return e.location.display_address[0] + ' ' + e.location.display_address[1];
   }
 
-  componentDidMount() {
-    axios.get(`/api/getfavlisting/${this.props.user.id}`)
-      .then(response => {
-        this.setState({
-          favListing: response.data
-        })
-      });
+  handleGetRestaurant(e) {
+    if (this.props.currentRestaurant.id !== e.id) {
+      this.props.clearRestaurant(),
+        this.props.clearReviews()
+    }
+    this.props.addCurrentRestaurant(e.id),
+      this.props.getReviews(e.id)
   }
+
 
   render() {
     console.log("This is Profile Component", this.state.favListing)
@@ -63,14 +73,14 @@ class Profile extends Component {
               {this.state.favListing.map((e, i, arr) => {
                 return (
                   <div key={i} className="listing-container">
-                    <img className="profile-listing-photo" src={e.image_url} alt="restaurant" />
+                    <Link className="profile-listing-photo-container" to={`/restaurant/${e.id}`}>
+                      <img className="profile-listing-photo" src={e.image_url} alt="restaurant"
+                        onClick={() => this.handleGetRestaurant(e)}/>
+                    </Link>
                     <div className="listing-description-container">
-                      <Link style={{textDecoration:"none"}} to={`/restaurant/${e.id}`}><h3 className="restaurant-title" onClick={() => {
-                        if (this.props.currentRestaurant.id !== e.id) {
-                          this.props.clearRestaurant()
-                        }
-                        this.props.addCurrentRestaurant(e.id)
-                      }}>{e.name}</h3>
+                      <Link style={{ textDecoration: "none" }} to={`/restaurant/${e.id}`}>
+                        <h3 className="restaurant-title"
+                          onClick={() => this.handleGetRestaurant(e)}>{e.name}</h3>
                       </Link>
                       <h4>{this.insertAddress(e)} </h4>
                       <h4>Price range: {e.price} </h4>
@@ -95,4 +105,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { addCurrentRestaurant, clearRestaurant })(Profile);
+export default connect(mapStateToProps, { addCurrentRestaurant, clearRestaurant, getReviews, clearReviews })(Profile);
