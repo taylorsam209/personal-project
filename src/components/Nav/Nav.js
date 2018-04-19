@@ -23,7 +23,7 @@ class Nav extends Component {
         let { header } = this.props;
 
         return (
-            <div>
+            <div id="Nav">
                 <div className="header-parent">
                     <div className="header-child-left">
                         <Link to="/" className="logo-container" ><img className="logo" src={logo} alt="globe" />Vegan Eats</Link>

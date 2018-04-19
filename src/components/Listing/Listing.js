@@ -30,7 +30,7 @@ class Listing extends Component {
         
         <div key={i} className="listings-container">
          <Link 
-         className="photo-container"
+         className="listing-photo-container"
          onClick={() => this.handleGetRestaurant(e)}
               style={{ textDecoration: "none" }}
                to={`/restaurant/${e.id}`}>
@@ -45,8 +45,8 @@ class Listing extends Component {
             <h4>{this.handleBusinessAddress.bind(this)(e)} </h4>
             <h4>Price range: {e.price} </h4>
             <h4> Yelp rating: {e.rating} </h4>
-          </div>
           <div className="add-listing-button" onClick={() => { this.props.addFavRestaurant(this.props.user.id, e.id) }}>Save</div>
+          </div>
         </div>
       )
     })

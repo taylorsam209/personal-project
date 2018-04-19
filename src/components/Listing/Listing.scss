@@ -35,7 +35,7 @@
 }
 
 .listings-container {
-    height: 200px;
+    height: 250px;
     width: 500px;
     display: flex;
     background-color: white;
@@ -44,6 +44,7 @@
     margin:20px;
     align-content: center;
     justify-content: space-around;
+    align-items: center;
     font-family: $font-family-elegant;
     -webkit-animation-name: fadeInUp;
     animation-name: fadeInUp;
@@ -54,20 +55,25 @@
     animation-fill-mode: both;
 }
 
-.photo-container {
-    height: 160px;
-    width: 35%;
-    margin: 20px;
-    object-fit: cover;
-    overflow: hidden;
+.listing-photo-container {
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    border: solid 1px gray;
 }
 
 .listing-photo {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .listing-description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     h4{
         margin: 5px;
     }
@@ -144,11 +150,29 @@ background-color: rgb(243, 160, 157);
         .right-content-container{
             width: 100%;
         }
-        .listing-photo {
-            margin-top: auto !important;
-            margin-bottom: auto !important;
-            height: 150px;
-            width: 160px !important;
-            margin: 10px;
+
+        .listings-container{
+            height: 180px;
+        }
+
+        .listing-photo-container {
+            height: 80%;
+            width: 60%;
+        }
+
+        .listing-description-container {
+            height: 100%;
+            .restaurant-title {
+                margin: 0px;
+                
+            }
+            h4 {
+                margin:0px !important;
+                padding:0px !important;
+            }
+        }
+        .add-listing-button {
+            height: 20px;
+            width: 75px;
         }
          }

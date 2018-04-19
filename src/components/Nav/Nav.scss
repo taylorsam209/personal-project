@@ -1,4 +1,7 @@
 @import '../../variables';
+#Nav{
+    width: 100%;
+}
 
 .header-parent {
     color: $color-header;
@@ -6,7 +9,7 @@
     border-bottom: solid 1px rgb(168, 168, 168);
     background-color: $color-light;
     height: 60px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

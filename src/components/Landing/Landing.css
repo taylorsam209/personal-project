@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster|Cabin");
 .Landing {
-  width: 100vw;
-  height: 100vh; }
+  width: 100%;
+  height: 100%; }
 
 .video-overlay {
   width: 100%;

@@ -82,7 +82,7 @@ class Landing extends Component {
           <div className="video-overlay">
             <div className="search-container">
               <input className="input-bar" type="text" value={this.state.input}
-                onChange={(e) => this.handleChange(e)} placeholder="Find Vegan & Vegetarian near..." required />
+                onChange={(e) => this.handleChange(e)} placeholder="Enter City, State..." required />
               {/* <button type='submit' onSubmit={}/> */}
               <Link to='/listing' style={{textDecoration: 'none'}}>
                 <button type='submit' className="submit-btn" onClick={() => {

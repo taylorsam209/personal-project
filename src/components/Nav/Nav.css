@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster|Cabin");
+#Nav {
+  width: 100%; }
+
 .header-parent {
   color: #0599fc;
   border-top: solid 1px #a8a8a8;
   border-bottom: solid 1px #a8a8a8;
   background-color: snow;
   height: 60px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center; }
