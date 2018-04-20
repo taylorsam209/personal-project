@@ -8,6 +8,7 @@
 .video-container { 
     width: 100%;
     height: 70%;
+    padding-top:60px;
     position: relative;
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
@@ -19,6 +20,7 @@
     .video-overlay {
         width: 100%;
         height: 100%;
+        padding-top:60px;
         position: absolute;
         left: 0px;
         top: 0px;

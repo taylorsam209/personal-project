@@ -43,7 +43,7 @@ class Landing extends Component {
     if (!this.state.pictures) {
       return
     }
-    let { counter, direction, pictures } = this.state;
+    let { counter, pictures } = this.state;
     if (counter >= pictures.length - 1) counter = 0;
     else counter++;
     this.setState({ counter, direction: 'forward' })
@@ -81,9 +81,14 @@ class Landing extends Component {
     getListings(this.state.input)
   }
 
+  handleCarousel() {
+    return this.state.pictures ? this.state.pictures.map((img, i) => {
+      return <div className="image" key={i} style={this.imgStyle(img, i)}></div>
+    }) : <div className="spinner"></div>
+  }
+
 
   render() {
-    const { getListings } = this.props;
     return (
       <div className="Landing">
         <Nav header='Welcome' />
@@ -114,9 +119,7 @@ class Landing extends Component {
           </div>
           <div className="photo-container">
             <div className="landing-carousel-container">
-              {this.state.pictures ? this.state.pictures.map((img, i) => {
-                return <div className="image" key={i} style={this.imgStyle(img, i)}></div>
-              }) : <div className="spinner"></div>}
+              {this.handleCarousel()}
             </div>
           </div>
         </div>

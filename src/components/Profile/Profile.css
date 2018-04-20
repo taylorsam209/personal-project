@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster|Cabin");
 .Listing {
+  width: 100%;
   text-align: center; }
 
 .profile-parent-container {
@@ -7,16 +8,19 @@
   width: 90%;
   height: 100vh;
   display: flex;
-  margin: 0 auto 0 auto; }
+  margin: 0 auto;
+  padding-top: 60px; }
 
 .left-profile-container {
-  height: 100vh;
+  height: 100%;
   width: 40%; }
-  .left-profile-container .profile-pic {
+  .left-profile-container .profile-pic-container {
+    margin: auto;
     height: 230px;
     width: 230px;
     border: solid 2px #036fc7;
     border-radius: 200px;
+    overflow: hidden;
     -webkit-animation-name: bounceIn;
     animation-name: bounceIn;
     -webkit-animation-duration: 1s;
@@ -24,100 +28,94 @@
     animation-delay: 0.5s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both; }
+    .left-profile-container .profile-pic-container .profile-pic {
+      height: 100%;
+      width: 100%;
+      object-fit: cover; }
 
 .right-favorite-container {
   width: 60%;
-  height: 100vh; }
-
-.favorite-title {
-  background-color: #1A936F;
-  font-size: 2em;
-  color: white;
-  height: 8.25%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  -webkit-animation-name: fadeInRight;
-  animation-name: fadeInRight;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  animation-delay: 0.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both; }
-
-.favorite-content {
-  height: 91.75%;
-  width: 100%;
-  background-color: #1660b4;
-  border: solid 1px white;
-  flex-wrap: wrap;
-  overflow: scroll;
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  animation-delay: 0.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both; }
-
-.listing-container {
-  height: 200px;
-  width: 500px;
-  display: flex;
-  background-color: white;
-  border: 5px solid #505050;
-  margin: 20px auto 20px auto;
-  align-content: center;
-  font-family: Cabin;
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both; }
-
-.profile-listing-photo-container {
-  text-decoration: none;
-  height: 160px;
-  width: 50%;
-  margin: 20px; }
-
-.profile-listing-photo {
   height: 100%;
-  width: 100%;
-  object-fit: cover;
-  overflow: hidden;
-  border: 1px solid gray; }
-
-.listing-description-container h4 {
-  margin: 5px; }
-
-.restaurant-title {
-  color: #125bf8;
-  transition: color 1s;
-  font-size: 1.25em; }
-
-.restaurant-title:hover {
-  color: #7ea5f5; }
-
-.delete-listing-btn {
-  margin: 5px;
-  cursor: pointer;
-  height: 35px;
-  width: 75px;
-  background-color: #eb3f39;
-  text-decoration: none;
-  color: white;
-  border: 2px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Lobster;
-  font-size: 1.25em; }
-
-.delete-listing-btn:hover {
-  background-color: #f3a09d; }
+  margin-top: 20px; }
+  .right-favorite-container .favorite-title {
+    background-color: #1A936F;
+    font-size: 2em;
+    color: white;
+    height: 8.25%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
+  .right-favorite-container .favorite-content {
+    height: 91.75%;
+    width: 100%;
+    background-color: #1660b4;
+    border: solid 1px white;
+    overflow: scroll;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
+    .right-favorite-container .favorite-content .listing-container {
+      height: 200px;
+      width: 500px;
+      display: flex;
+      background-color: white;
+      border: 5px solid #505050;
+      margin: 20px auto 20px auto;
+      align-content: center;
+      font-family: Cabin;
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both; }
+      .right-favorite-container .favorite-content .listing-container .profile-listing-photo-container {
+        text-decoration: none;
+        height: 160px;
+        width: 50%;
+        margin: 20px; }
+        .right-favorite-container .favorite-content .listing-container .profile-listing-photo-container .profile-listing-photo {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          overflow: hidden;
+          border: 1px solid gray; }
+      .right-favorite-container .favorite-content .listing-container .listing-description-container .restaurant-title {
+        color: #125bf8;
+        transition: color 1s;
+        font-size: 1.25em; }
+      .right-favorite-container .favorite-content .listing-container .listing-description-container .restaurant-title:hover {
+        color: #7ea5f5; }
+      .right-favorite-container .favorite-content .listing-container .listing-description-container h4 {
+        margin: 5px; }
+      .right-favorite-container .favorite-content .listing-container .delete-listing-btn {
+        margin: 5px;
+        cursor: pointer;
+        height: 35px;
+        width: 75px;
+        background-color: #eb3f39;
+        text-decoration: none;
+        color: white;
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Lobster;
+        font-size: 1.25em; }
+      .right-favorite-container .favorite-content .listing-container .delete-listing-btn:hover {
+        background-color: #f3a09d; }
 
 @-webkit-keyframes fadeInRight {
   0% {
@@ -227,14 +225,16 @@
   .profile-parent-container {
     display: inline; }
   .left-profile-container {
-    margin: auto;
-    height: 30%; }
+    margin: auto; }
   .right-favorite-container {
     margin: auto;
     width: 85%; } }
 
 @media (max-width: 480px) {
+  .left-profile-container {
+    margin: auto;
+    width: 90%; }
   .right-favorite-container {
-    width: 95%; }
+    width: 90%; }
   .listing-container {
-    width: 95%; } }
+    width: 90% !important; } }

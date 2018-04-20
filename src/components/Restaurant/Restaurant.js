@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { Card, CardMedia, CardTitle } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
 import './Restaurant.css';
 import Nav from '../Nav/Nav';
 import { connect } from 'react-redux';
 import { addFavRestaurant } from '../../ducks/reducer';
 import 'font-awesome/css/font-awesome.min.css';
-import Carousel from "../Carousel/Carousel";
 import Map from "../Map/Map"
 
 class Restaurant extends Component {

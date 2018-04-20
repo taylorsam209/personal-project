@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster|Cabin");
 #Nav {
-  width: 100%; }
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 20; }
 
 .header-parent {
   color: #0599fc;

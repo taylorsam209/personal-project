@@ -19,10 +19,11 @@
 }
 
 .right-content-container {
-    min-height: 100%;
+    padding-top:80px;
+    height: 100%;
     width: 90%;
     background-color: $color-dark;
-    margin: 20px auto 20px auto;
+    margin:auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

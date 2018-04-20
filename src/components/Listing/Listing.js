@@ -64,14 +64,13 @@ class Listing extends Component {
         {this.props.listings.length ?
           <div className="right-content-container">
             {this.handleListing()}
-          </div> : <h2> Gathering results... </h2>}
+          </div> : <h2 style={{paddingTop: "100px", marginTop: "0px"}}> Gathering results... </h2>}
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  console.log(state)
   return {
     listings: state.listings,
     user: state.user,

@@ -31,7 +31,6 @@ class Profile extends Component {
   deleteFavRestaurant(id, restaurant) {
     axios.delete(`/api/deletefavrestaurant/?userId=${id}&restaurantId=${restaurant}`)
       .then(response => {
-        console.log(response.data)
         this.setState({
           favListing: response.data
         })
@@ -63,8 +62,10 @@ class Profile extends Component {
         <Nav header="Profile" />
         <div className="profile-parent-container">
           <div className='left-profile-container'>
-            <h1> Hello! </h1>
-            <img className="profile-pic" src={img} alt="profile" />
+            <h1 style={{marginTop:"0", paddingTop:"80px"}}> Hello! </h1>
+            <div className="profile-pic-container">
+              <img className="profile-pic" src={img} alt="profile" />
+            </div>
             <h1>{user_name}</h1>
           </div>
           <div className="right-favorite-container">
