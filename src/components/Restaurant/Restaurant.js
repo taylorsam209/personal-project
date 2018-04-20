@@ -24,12 +24,12 @@ class Restaurant extends Component {
   render() {
     const { id, name, price, rating, url, image_url, display_phone, review_count } = this.props.currentRestaurant;
     const { currentRestaurant } = this.props;
-
+    const{ reviews} = this.props.reviews
     return (
       <div className="Restaurant">
         <Nav header='Details' />
-        {currentRestaurant.length !== 0 ? <h1 className="title">{name}</h1> : null}
-        {currentRestaurant.length !== 0 ?
+        {reviews ? <h1 className="title">{name}</h1> : null}
+        {reviews ?
           <Card className='restaurant-container'>
             <CardMedia overlay={<CardTitle title={'Rating: ' + rating} subtitle={'Review Count: ' + review_count} />}>
               <img src={image_url || 'https://pixy.org/images/placeholder.png'} alt='' />
@@ -48,7 +48,7 @@ class Restaurant extends Component {
             </div>
           </Card> 
           : null}
-          {currentRestaurant.length !== 0 ?<Map />: null}
+          {reviews ?<Map />: null}
       </div>
     );
   }
