@@ -7,15 +7,15 @@ import { addCurrentRestaurant, addFavRestaurant, clearRestaurant, getReviews, cl
 
 class Listing extends Component {
 
-  handleGetRestaurant(e){
+  handleGetRestaurant(e) {
     if (this.props.currentRestaurant.id !== e.id) {
       this.props.clearRestaurant(),
-      this.props.clearReviews()
+        this.props.clearReviews()
     }
     this.props.addCurrentRestaurant(e.id),
-    this.props.getReviews(e.id)
-    }
-  
+      this.props.getReviews(e.id)
+  }
+
 
   handleBusinessAddress(e) {
     if (e.location.display_address[2]) {
@@ -24,28 +24,31 @@ class Listing extends Component {
     else return e.location.display_address[0] + ' ' + e.location.display_address[1];
   }
 
-  handleListing(){
+  handleListing() {
     return this.props.listings.map((e, i, arr) => {
       return (
-        
+
         <div key={i} className="listings-container">
-         <Link 
-         className="listing-photo-container"
-         onClick={() => this.handleGetRestaurant(e)}
-              style={{ textDecoration: "none" }}
-               to={`/restaurant/${e.id}`}>
-          <img  className='listing-photo' src={e.image_url} alt="none available" />
+          <Link
+            className="listing-photo-container"
+            onClick={() => this.handleGetRestaurant(e)}
+            style={{ textDecoration: "none" }}
+            to={`/restaurant/${e.id}`}>
+            <img className='listing-photo' src={e.image_url} alt="none available" />
           </Link>
           <div className="listing-description-container">
-            <Link 
-            onClick={() => this.handleGetRestaurant(e)}
-            style={{ textDecoration: "none" }} to={`/restaurant/${e.id}`}>
+            <Link
+              onClick={() => this.handleGetRestaurant(e)}
+              style={{ textDecoration: "none" }} to={`/restaurant/${e.id}`}>
               <h2 className='restaurant-title' >{e.name}</h2>
             </Link>
             <h4>{this.handleBusinessAddress.bind(this)(e)} </h4>
             <h4>Price range: {e.price} </h4>
             <h4> Yelp rating: {e.rating} </h4>
-          <div className="add-listing-button" onClick={() => { this.props.addFavRestaurant(this.props.user.id, e.id) }}>Save</div>
+            <div className="add-listing-button"
+              onClick={() => { this.props.addFavRestaurant(this.props.user.id, e.id) }}>
+              Save
+          </div>
           </div>
         </div>
       )
@@ -54,14 +57,14 @@ class Listing extends Component {
 
   render() {
     console.log(this.props.listings)
-    
+
     return (
       <div className="Listing">
         <Nav header="- Results -" />
         {this.props.listings.length ?
-        <div className="right-content-container">
-          {this.handleListing()}
-        </div> : <h1> Gathering results... </h1> }    
+          <div className="right-content-container">
+            {this.handleListing()}
+          </div> : <h2> Gathering results... </h2>}
       </div>
     );
   }

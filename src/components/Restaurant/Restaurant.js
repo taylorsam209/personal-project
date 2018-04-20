@@ -48,8 +48,9 @@ class Restaurant extends Component {
               </a>
               <div className="add-restaurant-btn" onClick={() => { this.props.addFavRestaurant(this.props.user.id, id) }}>Save</div>
             </div>
-          </Card> : null}
-        <Map />
+          </Card> 
+          : null}
+          {currentRestaurant.length !== 0 ?<Map />: null}
       </div>
     );
   }

@@ -129,6 +129,7 @@
 
 @media (max-width: 480px) {
   .right-content-container {
+    margin: 0px;
     width: 100%; }
   .listings-container {
     height: 180px; }

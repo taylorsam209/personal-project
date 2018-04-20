@@ -6,15 +6,15 @@ module.exports = {
         const location = req.params.location
         axios.get(`https://api.yelp.com/v3/businesses/search?term=vegan&categories=restaurants,food,vegan,vegetarian,organic_stores,farmersmarket,ethicgrocery&radius=20000&limit=50&location=${location}`,
             { headers: { "Authorization": `Bearer ${process.env.YELP_ACCESS_TOKEN}` } })
-            .then(response => { 
-                res.status(200).send(response.data.businesses)
-            })
+            .then(response => res.status(200).send(response.data.businesses))
+            .catch(error=>console.error)
     },
 
     readRestaurant: (req, res) => {
         axios.get(`https://api.yelp.com/v3/businesses/${req.params.id}`,
             { headers: { "Authorization": `Bearer ${process.env.YELP_ACCESS_TOKEN}` } })
             .then((response) => res.status(200).send(response.data))
+            .catch(error=>console.error)
     },
 
     addRestaurant: (req, res) => {
@@ -33,6 +33,7 @@ module.exports = {
                     res.status(200).send("fail")
                 }
             })
+            .catch(error=>console.error)
     },
 
     readFavListing: (req, res) => {
@@ -61,7 +62,7 @@ module.exports = {
                             }
                         })
                         .catch(err => {
-                            console.log(count, "err")
+                            console.log(count, err)
                             count++
                         })
                 }
@@ -73,6 +74,7 @@ module.exports = {
         const db = req.app.get('db');
         const { userId, restaurantId } = req.query;
         var count = 0;
+        console.log("delete hit", userId, restaurantId )
         db.delete_fav_restaurant([userId, restaurantId])
             .then(response => {
                 db.find_fav_restaurants(userId)
@@ -95,11 +97,11 @@ module.exports = {
                                     }
                                 })
                                 .catch(err => {
-                                    console.log(count, "err")
+                                    // console.log(count, err)
                                     count++
                                 })
                         }
-                        console.log(favListing)
+                        // console.log(favListing)
                     })
             });
     },

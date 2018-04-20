@@ -5,6 +5,38 @@
   display: flex;
   flex-direction: column; }
 
+.title {
+  margin: 15px 0px;
+  margin-bottom: 0px;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.restaurant-container {
+  width: 50%;
+  margin: 20px auto 20px auto;
+  background-color: green;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+  .restaurant-container h4 {
+    margin-top: 10px; }
+  .restaurant-container p {
+    margin-top: 10px; }
+
+.reviews p {
+  margin: 10px;
+  font-style: italic;
+  color: #8b8888; }
+
 .photo-container {
   display: flex;
   flex-direction: row;
@@ -62,22 +94,6 @@
 .carousel-btn:hover {
   background-color: #C6DABF; }
 
-.restaurant-description-container {
-  width: 70%;
-  margin: 20px auto 20px auto;
-  font-family: Cabin;
-  color: white;
-  background-color: #1660b4;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1.5s;
-  animation-delay: 1.75s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both; }
-
 .yelp-btn {
   height: 50px;
   width: 220px;
@@ -86,7 +102,7 @@
   color: white;
   border: solid 2px white;
   border-radius: 5px;
-  background-color: #0599fc;
+  background-color: red;
   font-size: 1.25em;
   font-weight: bold;
   display: flex;
@@ -147,6 +163,26 @@
   100% {
     opacity: 1; } }
 
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
 /*Tablet Views */
 @media (max-width: 768px) {
   .carousel-container {
@@ -154,6 +190,8 @@
     width: 350px; } }
 
 @media (max-width: 480px) {
+  .restaurant-container {
+    width: 80%; }
   .restaurant-description-container {
     font-size: .75em; }
   .carousel-btn {
