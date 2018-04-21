@@ -5,7 +5,6 @@
 
 .video-container {
   width: 100%;
-  height: 70%;
   padding-top: 60px;
   position: relative;
   -webkit-animation-name: fadeIn;
@@ -23,110 +22,92 @@
     left: 0px;
     top: 0px;
     z-index: 1; }
+    .video-container .video-overlay .search-container {
+      width: 70%;
+      margin: auto;
+      margin-top: 100px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      animation-name: slideInDown;
+      animation-duration: 1s;
+      animation-delay: 2s;
+      animation-fill-mode: both; }
+      .video-container .video-overlay .search-container .input-bar {
+        height: 35px;
+        width: 500px;
+        font-size: 1.5em;
+        text-align: center;
+        font-family: Cabin;
+        color: black;
+        opacity: 0.85; }
+      .video-container .video-overlay .search-container .submit-btn {
+        height: 35px;
+        width: 75px;
+        background-color: #eb3f39;
+        text-decoration: none;
+        color: white;
+        border: 5px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Lobster;
+        font-weight: bold; }
+      .video-container .video-overlay .search-container .submit-btn:hover {
+        background-color: #f3a09d; }
+    .video-container .video-overlay .description-container {
+      margin: auto;
+      font-family: Lobster;
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+      width: 75%;
+      height: 50%;
+      opacity: 0.80;
+      animation: fadein 5s;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
   .video-container video {
     width: 100%;
     height: 100%;
     z-index: -1; }
 
-.search-container {
-  width: 70%;
-  margin: auto;
-  margin-top: 100px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  animation-name: slideInDown;
-  animation-duration: 1s;
-  animation-delay: 2s;
-  animation-fill-mode: both; }
-
-.input-bar {
-  height: 35px;
-  width: 500px;
-  font-size: 1.5em;
-  text-align: center;
-  font-family: Cabin;
-  color: black;
-  opacity: 0.85; }
-
-.submit-btn {
-  height: 35px;
-  width: 75px;
-  background-color: #eb3f39;
-  text-decoration: none;
-  color: white;
-  border: 5px solid white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Lobster;
-  font-weight: bold; }
-
-.submit-btn:hover {
-  background-color: #f3a09d; }
-
-.description-container {
-  margin: auto;
-  font-family: Lobster;
-  font-size: 30px;
-  font-weight: bold;
-  color: white;
-  width: 75%;
-  height: 50%;
-  opacity: 0.80;
-  animation: fadein 5s;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
 .bottom-container {
   margin-top: -4px;
   width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #1660b4; }
+  .bottom-container .about-container {
+    width: 50%;
+    height: 60%;
+    background-color: snow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .bottom-container .about-container .about-title {
+      font-family: Lobster;
+      color: #0599fc;
+      font-size: 2.5em;
+      font-weight: bold; }
+    .bottom-container .about-container .about-description {
+      font-family: Cabin;
+      background-color: snow;
+      font-size: 1.5em;
+      color: #272626;
+      padding: 0 30px; }
+  .bottom-container .carousel-container {
+    margin: auto;
+    width: 50%; }
 
-.about-container {
-  width: 50%;
-  height: 40%;
-  margin: auto;
-  background-color: snow;
-  border-radius: 5px; }
-
-.about-title {
-  font-family: Lobster;
-  color: #0599fc;
-  font-size: 2.5em;
-  font-weight: bold; }
-
-.about-description {
-  font-family: Cabin;
-  background-color: snow;
-  font-size: 1.5em;
-  color: #272626; }
-
-.photo-container {
-  display: flex;
-  flex-direction: row;
-  margin: 0px; }
-
-.landing-carousel-container {
-  height: 400px;
-  width: 700px;
-  overflow: hidden;
-  position: relative;
-  background-color: gray; }
-
-.image {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-size: cover;
-  transition: left .4s;
-  /* transition lets photos slide over smoothly */ }
+.slider-slide {
+  min-height: 100%; }
 
 @keyframes slideInDown {
   0% {
@@ -143,17 +124,19 @@
   to {
     opacity: .80; } }
 
-/*Mobile Views*/
-/*Tablet Views */
 @media (max-width: 768px) {
-  .landing-carousel-container {
-    display: none; }
-  .about-container {
-    width: 100%;
-    border-radius: 0px; } }
+  .bottom-container {
+    display: block; }
+    .bottom-container .about-container {
+      width: 100%; }
+    .bottom-container .carousel-container {
+      width: 100%;
+      height: auto; } }
 
 @media (max-width: 480px) {
   .input-bar {
-    font-size: 1em; }
+    font-size: 1em !important; }
   .description-container {
-    display: none; } }
+    display: none !important; }
+  .about-description {
+    margin-top: 0px; } }

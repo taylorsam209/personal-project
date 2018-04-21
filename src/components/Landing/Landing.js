@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Nav from '../Nav/Nav';
+import Carousel from 'nuka-carousel';
 import "./Landing.css";
 import { connect } from 'react-redux';
-import { getListings, getCurrentUser, clearListings } from '../../ducks/reducer';
 import { Link } from 'react-router-dom';
+import Nav from '../Nav/Nav';
+import { getListings, getCurrentUser, clearListings } from '../../ducks/reducer';
 import veggiestand from '../../assets/Veggie-Stand.mp4'
-import vegan2 from "../../assets/vegan2.jpg";
+import hotpot from "../../assets/hotpot.mp4"
 import freshveggie from "../../assets/fresh-veggies.jpeg";
 import mexicana from "../../assets/mexicana.png";
 import miso from "../../assets/miso.jpg";
@@ -15,57 +16,14 @@ let auto;
 const timer = 4000;
 
 class Landing extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      input: "",
-      pictures: [vegan2, freshveggie, mexicana, miso, pho],
-      counter: 1,
-      direction: "forward"
-    }
-
-    this.goForward = this.goForward.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+  state = {
+    input: "",
+    pictures: [freshveggie, mexicana, miso, pho],
   }
 
   componentDidMount() {
     this.props.getCurrentUser();
-    auto = setInterval(_ => { this.goForward() }, timer)
   }
-
-  resetInterval() {
-    clearInterval(auto);
-    auto = setInterval(_ => { this.goForward() }, timer);
-  }
-
-  goForward() {
-    if (!this.state.pictures) {
-      return
-    }
-    let { counter, pictures } = this.state;
-    if (counter >= pictures.length - 1) counter = 0;
-    else counter++;
-    this.setState({ counter, direction: 'forward' })
-  }
-
-  imgStyle(img, index) {
-    const { counter, direction, pictures } = this.state;
-    const backgroundImage = `url(${img})`;
-
-    const left = (
-      index === counter - 1 || counter === 0 && index === pictures.length - 1 ? '-700px'
-        : index === counter ? '0px'
-          : '700px'
-    )
-
-    const zIndex = (
-      left === '700px' && direction === 'forward' ? 1
-        : left === '-700px' && direction === 'back' ? 1
-          : 2
-    )
-    return { backgroundImage, left, zIndex };
-  };
 
   handleChange(e) {
     this.setState({
@@ -82,11 +40,18 @@ class Landing extends Component {
   }
 
   handleCarousel() {
-    return this.state.pictures ? this.state.pictures.map((img, i) => {
-      return <div className="image" key={i} style={this.imgStyle(img, i)}></div>
-    }) : <div className="spinner"></div>
+    return this.state.pictures ?
+      <Carousel 
+      className="carousel-container" 
+      autoplay={true}
+      autoPlayInterval={4000}
+      wrapAround={true}
+      >
+        {this.state.pictures.map((img, i) => {
+          return <img className="carousel-image" src={img} key={i} />
+        })}
+      </Carousel> : null
   }
-
 
   render() {
     return (
@@ -107,7 +72,7 @@ class Landing extends Component {
             </div>
           </div>
           <video autoPlay loop>
-            <source src={veggiestand} type="video/mp4" />.
+            <source src={hotpot} type="video/mp4" />.
           </video>
         </div>
         <div className="bottom-container">
@@ -117,10 +82,8 @@ class Landing extends Component {
               Search around your city to find vegan and vegetarian friendly meals as well as resources.
             This includes restaurants, grocery stores, farmers market, and more! </p>
           </div>
-          <div className="photo-container">
-            <div className="landing-carousel-container">
-              {this.handleCarousel()}
-            </div>
+          <div className="carousel-container">
+            {this.handleCarousel()}
           </div>
         </div>
       </div>

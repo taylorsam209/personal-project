@@ -17,8 +17,9 @@
   animation-fill-mode: both; }
 
 .restaurant-container {
-  width: 50%;
+  width: 70%;
   margin: 20px auto 20px auto;
+  padding-bottom: 20px;
   background-color: green;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: fadeIn;
@@ -27,6 +28,10 @@
   animation-duration: 1.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
+  .restaurant-container .card-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; }
   .restaurant-container h4 {
     margin-top: 10px; }
   .restaurant-container p {
@@ -36,63 +41,6 @@
   margin: 10px;
   font-style: italic;
   color: #8b8888; }
-
-.photo-container {
-  display: flex;
-  flex-direction: row;
-  margin: 0px; }
-
-.carousel-container {
-  height: 400px;
-  width: 700px;
-  overflow: hidden;
-  position: relative;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  background-color: #b3b3b3;
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1.5s;
-  animation-delay: 1.25s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both; }
-
-.image {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-size: cover;
-  animation: fadeIn 1s;
-  transition: left .4s;
-  /* transition lets photos slide over smoothly */ }
-
-.carousel-btn {
-  cursor: pointer;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 3px;
-  border: medium solid black;
-  background-color: #1A936F;
-  transition: .4s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
-  font-weight: bold;
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1.5s;
-  animation-delay: 1.25s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both; }
-
-.carousel-btn:hover {
-  background-color: #C6DABF; }
 
 .yelp-btn {
   height: 50px;
@@ -113,7 +61,7 @@
   cursor: pointer;
   height: 50px;
   width: 150px;
-  margin: 20px auto 20px auto;
+  margin: 20px auto;
   font-family: Lobster;
   font-size: 1.25em;
   color: white;

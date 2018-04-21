@@ -7,7 +7,6 @@
 
 .video-container { 
     width: 100%;
-    height: 70%;
     padding-top:60px;
     position: relative;
     -webkit-animation-name: fadeIn;
@@ -25,6 +24,59 @@
         left: 0px;
         top: 0px;
         z-index: 1;
+        .search-container{
+            width: 70%;
+            margin: auto;
+            margin-top: 100px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            animation-name: slideInDown;
+            animation-duration: 1s;
+            animation-delay: 2s;
+            animation-fill-mode: both;
+            .input-bar {
+                height: 35px;
+                width: 500px;;
+                font-size: 1.5em;
+                text-align: center;
+                font-family: $font-family-elegant;
+                color: black;
+                opacity: 0.85;
+            }
+            .submit-btn {
+                height: 35px;
+                width: 75px;
+                background-color: rgb(235, 63, 57);
+                text-decoration: none;
+                color: white;
+                border: 5px solid white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $font-family-bold;
+                font-weight: bold;
+            }
+            .submit-btn:hover {
+                background-color: rgb(243, 160, 157);
+            }
+        }
+        .description-container{
+            margin: auto;
+            font-family: $font-family-bold;
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            width: 75%;
+            height: 50%;
+            opacity: 0.80;
+            animation: fadein 5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     } 
     video {
         width: 100%;
@@ -33,121 +85,45 @@
     }
 }
 
-
-
-
-.search-container{
-    width: 70%;
-    margin: auto;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    animation-name: slideInDown;
-    animation-duration: 1s;
-    animation-delay: 2s;
-    animation-fill-mode: both;
-}
-
-.input-bar {
-    height: 35px;
-    width: 500px;;
-    font-size: 1.5em;
-    text-align: center;
-    font-family: $font-family-elegant;
-    color: black;
-    opacity: 0.85;
-}
-
-.submit-btn {
-    height: 35px;
-    width: 75px;
-    background-color: rgb(235, 63, 57);
-    text-decoration: none;
-    color: white;
-    border: 5px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: $font-family-bold;
-    font-weight: bold;
-    
-}
-
-.submit-btn:hover {
-    background-color: rgb(243, 160, 157);
-}
-
-.description-container{
-    margin: auto;
-    font-family: $font-family-bold;
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    width: 75%;
-    height: 50%;
-    opacity: 0.80;
-    animation: fadein 5s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .bottom-container{
     margin-top: -4px;
     width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: $color-dark;
+    .about-container{
+        width: 50%;
+        height: 60%;
+        background-color: $color-light;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .about-title{
+            font-family: $font-family-bold;
+            color: $color-header;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .about-description{
+            font-family: $font-family-elegant;
+            background-color: $color-light;
+            font-size:1.5em;
+            color: rgb(39, 38, 38);
+            padding:0 30px;
+        }
+    }
+    .carousel-container{
+        margin: auto;
+        width:50%;
+    }
 }
 
-.about-container{
-    width: 50%;
-    height: 40%;
-    margin: auto;
-    background-color: $color-light;
-    border-radius: 5px;
+.slider-slide {
+    min-height: 100%;
 }
-
-.about-title{
-    font-family: $font-family-bold;
-    color: $color-header;
-    font-size: 2.5em;
-    font-weight: bold;
-
-}
-
-.about-description{
-    font-family: $font-family-elegant;
-    background-color: $color-light;
-    font-size:1.5em;
-    color: rgb(39, 38, 38);
-}
-
-.photo-container{
-    display: flex;
-    flex-direction: row;
-    margin: 0px;
-    // margin-top: 50px;
-}
-.landing-carousel-container {
-    height: 400px;
-    width: 700px;
-    overflow: hidden;
-    position: relative;
-    background-color: gray; 
-}
-
-.image {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-size: cover; 
-    transition: left .4s; /* transition lets photos slide over smoothly */
-  }
 
 @keyframes slideInDown {
    0% {
@@ -166,25 +142,27 @@
     to   { opacity: .80; }
 }
 
-/*Mobile Views*/
-
-/*Tablet Views */
 @media (max-width: 768px){
-    .landing-carousel-container{
-        display: none;
-    }
-    .about-container{
-        width: 100%;
-        border-radius: 0px;
+    .bottom-container{
+        display: block;
+        .about-container{
+            width: 100%;
+        }
+        .carousel-container{
+            width:100%;
+            height: auto;
+        }
     }
 }
 
 @media (max-width: 480px) {
     .input-bar {
-        font-size: 1em;
+        font-size: 1em !important;
     }
     .description-container{
-        display: none;
+        display: none !important;
     }
-
+    .about-description{
+        margin-top: 0px;
+    }
 }
