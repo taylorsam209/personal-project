@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
+import Typing from 'react-typing-animation';
+import Typist from 'react-typist';
+import TypistLoop from 'react-typist-loop'
+import TypistCycle from 'react-typist-cycle';
 import "./Landing.css";
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -12,13 +16,19 @@ import mexicana from "../../assets/mexicana.png";
 import miso from "../../assets/miso.jpg";
 import pho from "../../assets/pho.jpg";
 
-let auto;
-const timer = 4000;
-
 class Landing extends Component {
   state = {
     input: "",
     pictures: [freshveggie, mexicana, miso, pho],
+    words : ['Desire.', 'Explore.', 'Discover.', 'Nourish.']
+  }
+
+  typeWriter(){
+    return(
+      <TypistLoop interval={3000}>
+      {this.state.words.map(text => <Typist key={text} startDelay={1000}>{text}</Typist>)}
+    </TypistLoop>
+    )
   }
 
   componentDidMount() {
@@ -68,7 +78,7 @@ class Landing extends Component {
               </Link>
             </div>
             <div className="description-container">
-              <h1>Desire. Explore. Discover. Nourish.</h1>
+              {this.typeWriter()}
             </div>
           </div>
           <video autoPlay loop>

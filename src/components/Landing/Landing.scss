@@ -5,6 +5,19 @@
     height: 100%;
 }
 
+.Typist .Cursor {
+    display: inline-block;
+    &--blinking {
+      opacity: 1;
+      animation: blink 1s linear infinite;
+      @keyframes blink {
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+      }
+    }
+  }
+
 .video-container { 
     width: 100%;
     padding-top:60px;
@@ -66,7 +79,7 @@
         .description-container{
             margin: auto;
             font-family: $font-family-bold;
-            font-size: 30px;
+            font-size: 60px;
             font-weight: bold;
             color: rgb(255, 255, 255);
             width: 75%;
