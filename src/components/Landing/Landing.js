@@ -25,8 +25,12 @@ class Landing extends Component {
 
   typeWriter(){
     return(
-      <TypistLoop interval={3000}>
-      {this.state.words.map(text => <Typist key={text} startDelay={1000}>{text}</Typist>)}
+      <TypistLoop interval={1000}>
+      {/* {this.state.words.map(text => <Typist key={text} startDelay={4000}>{text}</Typist>)} */}
+      <Typist startDelay={4000}>Desire.<Typist.Backspace count={7} delay={1500}/></Typist>
+      <Typist>Explore.<Typist.Backspace count={8} delay={1500}/></Typist>
+      <Typist>Discover.<Typist.Backspace count={9} delay={1500}/></Typist>
+      <Typist>Nourish.<Typist.Backspace count={8} delay={1500}/></Typist>
     </TypistLoop>
     )
   }

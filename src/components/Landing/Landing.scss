@@ -37,10 +37,12 @@
         left: 0px;
         top: 0px;
         z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         .search-container{
             width: 70%;
-            margin: auto;
-            margin-top: 100px;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -52,12 +54,12 @@
             animation-fill-mode: both;
             .input-bar {
                 height: 35px;
-                width: 500px;;
+                width: 60%;
                 font-size: 1.5em;
                 text-align: center;
                 font-family: $font-family-elegant;
                 color: black;
-                opacity: 0.85;
+                opacity: 0.70;
             }
             .submit-btn {
                 height: 35px;
@@ -77,18 +79,15 @@
             }
         }
         .description-container{
-            margin: auto;
+            margin-top:50px;;
             font-family: $font-family-bold;
             font-size: 60px;
             font-weight: bold;
             color: rgb(255, 255, 255);
-            width: 75%;
-            height: 50%;
+            width: 60%;
+            height: 25%;
             opacity: 0.80;
             animation: fadein 5s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
     } 
     video {
@@ -169,11 +168,15 @@
 }
 
 @media (max-width: 480px) {
+    .search-container {
+        width:100% !important;
+    }
     .input-bar {
         font-size: 1em !important;
     }
     .description-container{
-        display: none !important;
+        margin-top:15px !important;
+        font-size: 40px !important;
     }
     .about-description{
         margin-top: 0px;
