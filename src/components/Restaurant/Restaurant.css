@@ -153,5 +153,8 @@
     width: 300px; }
   .restaurant-container {
     width: 90%; }
+  .reviews h4 {
+    margin-bottom: 20px; }
   .reviews p {
-    margin: 20px 10px; } }
+    font-size: 15px;
+    margin: 20px 15px; } }
