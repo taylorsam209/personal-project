@@ -3,9 +3,11 @@
   min-height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #1660b4; }
 
 .title {
+  color: white;
   margin: 0px;
   padding-top: 80px;
   -webkit-animation-name: fadeInDown;
@@ -18,9 +20,9 @@
 
 .restaurant-container {
   width: 70%;
-  margin: 20px auto 20px auto;
+  margin: 20px auto;
   padding-bottom: 20px;
-  background-color: green;
+  font-size: 20pz;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
@@ -37,10 +39,18 @@
   .restaurant-container p {
     margin-top: 10px; }
 
+.restaurant-description-container p {
+  font-size: 20px; }
+
+.reviews h4 {
+  font-size: 30px;
+  font-family: Cabin; }
+
 .reviews p {
-  margin: 10px;
+  font-size: 20px;
+  margin: 20px 100px;
   font-style: italic;
-  color: #8b8888; }
+  color: #2c2c2c; }
 
 .yelp-btn {
   height: 50px;
@@ -72,12 +82,6 @@
   display: flex;
   justify-content: center;
   align-items: center; }
-
-@keyframes fadein {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
 
 @-webkit-keyframes fadeInUp {
   0% {
@@ -135,15 +139,19 @@
 @media (max-width: 768px) {
   .carousel-container {
     height: 200px;
-    width: 350px; } }
-
-@media (max-width: 480px) {
+    width: 350px; }
   .restaurant-container {
     width: 80%; }
-  .restaurant-description-container {
-    font-size: .75em; }
+  .reviews p {
+    margin: 20px 20px; } }
+
+@media (max-width: 480px) {
   .carousel-btn {
     display: none; }
   .carousel-container {
     height: 300px;
-    width: 300px; } }
+    width: 300px; }
+  .restaurant-container {
+    width: 90%; }
+  .reviews p {
+    margin: 20px 10px; } }

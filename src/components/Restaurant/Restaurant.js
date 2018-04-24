@@ -34,7 +34,7 @@ class Restaurant extends Component {
           <CardMedia overlay={<CardTitle title={'Rating: ' + rating} subtitle={'Review Count: ' + review_count} />}>
             <img className="card-image" src={image_url || 'https://pixy.org/images/placeholder.png'} alt='' />
           </CardMedia>
-          <div >
+          <div className='restaurant-description-container'>
             <p>Price range: {price || 'N/A'}</p>
             <p>Phone: {display_phone || 'N/A'}</p>
             <div className="reviews">

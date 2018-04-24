@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
-import Typing from 'react-typing-animation';
 import Typist from 'react-typist';
 import TypistLoop from 'react-typist-loop'
-import TypistCycle from 'react-typist-cycle';
 import "./Landing.css";
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -26,7 +24,6 @@ class Landing extends Component {
   typeWriter(){
     return(
       <TypistLoop interval={1000}>
-      {/* {this.state.words.map(text => <Typist key={text} startDelay={4000}>{text}</Typist>)} */}
       <Typist startDelay={4000}>Desire.<Typist.Backspace count={7} delay={1500}/></Typist>
       <Typist>Explore.<Typist.Backspace count={8} delay={1500}/></Typist>
       <Typist>Discover.<Typist.Backspace count={9} delay={1500}/></Typist>
