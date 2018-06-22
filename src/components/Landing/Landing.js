@@ -82,7 +82,7 @@ class Landing extends Component {
               {this.typeWriter()}
             </div>
           </div>
-          <video autoPlay loop>
+          <video autoPlay muted loop>
             <source src={hotpot} type="video/mp4" />.
           </video>
         </div>
