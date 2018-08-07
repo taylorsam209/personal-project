@@ -53,8 +53,8 @@
             animation-delay: 2s;
             animation-fill-mode: both;
             .input-bar {
-                height: 35px;
-                width: 60%;
+                height: 30px;
+                width: 400px;
                 font-size: 1.5em;
                 text-align: center;
                 font-family: $font-family-elegant;
@@ -62,12 +62,12 @@
                 opacity: 0.70;
             }
             .submit-btn {
-                height: 35px;
+                height: 30px;
                 width: 75px;
                 background-color: rgb(235, 63, 57);
                 text-decoration: none;
                 color: white;
-                border: 5px solid white;
+                border: 3px solid white;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -173,6 +173,8 @@
     }
     .input-bar {
         font-size: 1em !important;
+        height: 27px !important;
+        width: 60% !important;
     }
     .description-container{
         margin-top:15px !important;

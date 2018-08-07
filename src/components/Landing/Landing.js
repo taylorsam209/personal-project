@@ -51,7 +51,7 @@ class Landing extends Component {
   }
 
   handleCarousel() {
-    return this.state.pictures ?
+    return (
       <Carousel 
       className="carousel-container" 
       autoplay={true}
@@ -61,7 +61,8 @@ class Landing extends Component {
         {this.state.pictures.map((img, i) => {
           return <img className="carousel-image" src={img} key={i} />
         })}
-      </Carousel> : null
+    </Carousel> 
+    ) 
   }
 
   render() {
